@@ -40,7 +40,7 @@ body {
     padding: 0;
     background-color: var(--game-bg-color);
     color: var(--text-color);
-    overflow-x: hidden;
+    overflow-x: initial;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -96,7 +96,7 @@ body {
     padding: 15px;
     border-radius: 10px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* HEADER - GAME HUD */
@@ -565,10 +565,145 @@ body {
     margin-top: 20px;
 }
 
-/* Ensure exactly 6 cards (2 rows of 3) */
-@media (min-width: 1000px) {
-    .project-gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
+/* ==================== */
+/* PROJECT CARD STYLES - UPDATED */
+/* ==================== */
+
+.project-log-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.project-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--primary-ui-color);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+    transition: height var(--animation-speed) ease;
+}
+
+.card-top-section {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Fixed height for media area */
+    overflow: hidden;
+}
+
+.project-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity var(--animation-speed) ease;
+}
+
+.project-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity var(--animation-speed) ease;
+}
+
+.project-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.85);
+    transform: translateY(100%);
+    transition: transform var(--animation-speed) ease;
+    border-top: 1px dashed var(--primary-ui-color);
+}
+
+.project-title-card {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2em;
+    color: var(--secondary-ui-color);
+    margin: 0 0 10px 0;
+}
+
+.project-role-card,
+.project-summary-card {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+}
+
+.view-project-button {
+    display: inline-block;
+    background: var(--primary-ui-color);
+    color: #000;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-family: 'Press Start 2P', cursive;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 0.8em;
+    transition: all var(--animation-speed) ease;
+}
+
+    .view-project-button:hover {
+        background: var(--secondary-ui-color);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 188, 212, 0.4);
+    }
+
+/* Hover Effects */
+.project-card:hover {
+    height: 450px;
+}
+
+.card-top-section:hover .project-thumbnail {
+    opacity: 0;
+}
+
+.card-top-section:hover .project-video {
+    opacity: 1;
+}
+
+.project-card:hover .project-details {
+    transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .project-card {
+        height: 220px;
+    }
+
+    .card-top-section {
+        height: 220px;
+    }
+
+    .project-card:hover {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        height: 180px;
+    }
+
+    .card-top-section {
+        height: 180px;
+    }
+
+    .project-card:hover {
+        height: 350px;
     }
 }
 
@@ -1175,3 +1310,42 @@ body::after {
         z-index: 1;
     }
 
+/* Sticky Navigation */
+.sticky-nav-container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--panel-bg-color);
+    padding: 10px 0;
+    border-bottom: 2px solid var(--primary-ui-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.sticky-footer-button {
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    background-color: var(--panel-bg-color);
+    border-top: 2px solid var(--primary-ui-color);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+}
+
+/* Adjust main content spacing */
+.game-main-screen {
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Ensure header and footer remain in normal flow */
+.game-hud {
+    position: relative;
+}
+
+.game-footer {
+    position: relative;
+}

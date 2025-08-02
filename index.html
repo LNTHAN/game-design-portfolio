@@ -36,34 +36,36 @@
         </symbol>
     </svg>
 </head>
+
 <body>
+    <div class="sticky-nav-container">
+        <nav class="game-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="#about" class="nav-button">About Me</a></li>
+                <li><a href="#projects" class="nav-button">Projects</a></li>
+                <li><a href="#skills" class="nav-button">Skills</a></li>
+                <li><a href="#contact" class="nav-button">Contact</a></li>
+                <li><a href="resume.html" class="nav-button">Resume [VIEW]</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <div class="game-container">
         <header class="game-hud">
-            <h1 class="game-title">Le Nham Than // Game Designer</h1>
-            <div class="sticky-nav-container">
-                <nav class="game-nav" aria-label="Main navigation">
-                    <ul>
-                        <li><a href="#about" class="nav-button">About Me</a></li>
-                        <li><a href="#projects" class="nav-button">Projects</a></li>
-                        <li><a href="#skills" class="nav-button">Skills</a></li>
-                        <li><a href="#contact" class="nav-button">Contact</a></li>
-                        <li><a href="resume.html" class="nav-button">Resume [VIEW]</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <h1 class="game-title">Than Nham Le // Game Designer</h1>
         </header>
 
         <main class="game-main-screen">
             <section id="about" class="game-section data-log-panel">
                 <h2 class="section-title">
                     <svg class="section-icon"><use href="#icon-player" /></svg>
-                     PLAYER STATS 
+                    PLAYER STATS
                 </h2>
 
                 <div class="player-profile">
                     <!-- Left Column - Avatar -->
                     <div class="avatar-container">
-                        <img src="images/your-avatar.png" alt="Player Avatar" class="profile-avatar" width="150" height="150" loading="lazy">
+                        <img src="images/my-avatar.png" alt="Player Avatar" class="profile-avatar" width="150" height="150" loading="lazy">
                     </div>
 
                     <!-- Right Column - Stats -->
@@ -103,80 +105,98 @@
                 <div class="project-log-header">
                     <h2 class="section-title">
                         <svg class="section-icon"><use href="#icon-projects" /></svg>
-                         PROJECT LOG 
+                        PROJECT LOG
                     </h2>
                 </div>
 
                 <div class="project-gallery-grid">
                     <article class="project-card" tabindex="0">
-                        <figure>
-                            <img src="images/chibi-clash-thumbnail.jpg" alt="Chibi Clash Thumbnail" class="project-thumbnail" width="400" height="225" loading="lazy">
-                        </figure>
+                        <div class="card-top-section">
+                            <img src="images/projects/chibi-clash-thumbnail.png" alt="Project thumbnail" class="project-thumbnail">
+                            <video class="project-video" loop muted playsinline preload="none">
+                                <source src="videos/chibi-clash-demo.mp4" type="video/mp4">
+                            </video>
+                        </div>
                         <div class="project-details">
                             <h3 class="project-title-card">Chibi Clash</h3>
-                            <p class="project-role-card">Role: Project Manager – Lead Game Designer</p>
-                            <p class="project-summary-card">Led design and managed development for this key international outsourcing project.</p>
-                            <a href="projects/chibi-clash.html" class="view-project-button">VIEW CASE FILE</a>
+                            <p class="project-role-card">Role: Project Manager/Game Designer</p>
+                            <p class="project-summary-card">A PvP style, Inventory Management, Rogue Lite RPG</p>
+                            <a href="projects/project-page.html" class="view-project-button">VIEW CASE FILE</a>
                         </div>
                     </article>
 
                     <article class="project-card" tabindex="0">
-                        <figure>
-                            <img src="images/magic-tiles-3-thumbnail.jpg" alt="Magic Tiles 3 Thumbnail" class="project-thumbnail" width="400" height="225" loading="lazy">
-                        </figure>
+                        <div class="card-top-section">
+                            <img src="images/projects/magic-tiles-3-thumbnail.jpg" alt="Project thumbnail" class="project-thumbnail">
+                            <video class="project-video" loop muted playsinline preload="none">
+                                <source src="videos/magic-tiles-3-demo.mp4" type="video/mp4">
+                            </video>
+                        </div>
                         <div class="project-details">
                             <h3 class="project-title-card">Magic Tiles 3</h3>
                             <p class="project-role-card">Role: Game Designer</p>
-                            <p class="project-summary-card">Designed GDDs and update plans for the world's #1 music/rhythm game with over 3 billion downloads.</p>
-                            <a href="projects/magic-tiles-3.html" class="view-project-button">VIEW CASE FILE</a>
+                            <p class="project-summary-card">Piano Simulated Rhythm Game </p>
+                            <a href="projects/project-page.html" class="view-project-button">VIEW CASE FILE</a>
                         </div>
                     </article>
 
                     <article class="project-card" tabindex="0">
-                        <figure>
-                            <img src="images/mechmaster-thumbnail.jpg" alt="Mechmaster Thumbnail" class="project-thumbnail" width="400" height="225" loading="lazy">
-                        </figure>
+                        <div class="card-top-section">
+                            <img src="images/projects/mechmaster-thumbnail.jpg" alt="Project thumbnail" class="project-thumbnail">
+                            <video class="project-video" loop muted playsinline preload="none">
+                                <source src="videos/mech-master-demo.mp4" type="video/mp4">
+                            </video>
+                        </div>
                         <div class="project-details">
-                            <h3 class="project-title-card">Mechmaster</h3>
-                            <p class="project-role-card">Role: Lead Game Designer</p>
-                            <p class="project-summary-card">Conceptualized, implemented, and maintained gameplay systems for a giant robot combat NFT project.</p>
-                            <a href="projects/mechmaster.html" class="view-project-button">VIEW CASE FILE</a>
+                            <h3 class="project-title-card">Mech Master</h3>
+                            <p class="project-role-card">Role: Game Designer</p>
+                            <p class="project-summary-card">Tactical Turn-based RPG Controlling Giant Mecha Robots</p>
+                            <a href="projects/project-page.html" class="view-project-button">VIEW CASE FILE</a>
                         </div>
                     </article>
 
                     <article class="project-card" tabindex="0">
-                        <figure>
-                            <img src="images/fwt-r-thumbnail.jpg" alt="Fantasy War Tactics R Thumbnail" class="project-thumbnail" width="400" height="225" loading="lazy">
-                        </figure>
+                        <div class="card-top-section">
+                            <img src="images/projects/fwt-r-thumbnail.jpg" alt="Project thumbnail" class="project-thumbnail">
+                            <video class="project-video" loop muted playsinline preload="none">
+                                <source src="videos/ftw-r-demo.mp4" type="video/mp4">
+                            </video>
+                        </div>
                         <div class="project-details">
-                            <h3 class="project-title-card">Fantasy War Tactics R</h3>
-                            <p class="project-role-card">Role: Project Manager - Game Designer</p>
-                            <p class="project-summary-card">Managed yearly update plans and designed features for this midcore/hardcore mobile/PC game.</p>
-                            <a href="projects/fwt-r.html" class="view-project-button">VIEW CASE FILE</a>
+                            <h3 class="project-title-card">Fantasy Tactics</h3>
+                            <p class="project-role-card">Role: Project Manager/Game Designer</p>
+                            <p class="project-summary-card">Tactical Fantasy Turn-based RPG</p>
+                            <a href="projects/project-page.html" class="view-project-button">VIEW CASE FILE</a>
                         </div>
                     </article>
 
                     <article class="project-card" tabindex="0">
-                        <figure>
-                            <img src="images/sangokushi-royale-thumbnail.jpg" alt="Sangokushi Royale Thumbnail" class="project-thumbnail" width="400" height="225" loading="lazy">
-                        </figure>
+                        <div class="card-top-section">
+                            <img src="images/projects/sangokushi-royale-thumbnail.png" alt="Project thumbnail" class="project-thumbnail">
+                            <video class="project-video" loop muted playsinline preload="none">
+                                <source src="videos/sangokushi-royale-demo.mp4" type="video/mp4">
+                            </video>
+                        </div>
                         <div class="project-details">
-                            <h3 class="project-title-card">Sangokushi Royale</h3>
+                            <h3 class="project-title-card">TK Royale</h3>
                             <p class="project-role-card">Role: Feature Planner</p>
-                            <p class="project-summary-card">Developed monthly update plans and designed core features like characters and skills.</p>
-                            <a href="projects/sangokushi-royale.html" class="view-project-button">VIEW CASE FILE</a>
+                            <p class="project-summary-card">Tactical RPG Based On Three Kingdoms Novel</p>
+                            <a href="projects/project-page.html" class="view-project-button">VIEW CASE FILE</a>
                         </div>
                     </article>
 
                     <article class="project-card" tabindex="0">
-                        <figure>
-                            <img src="images/sangokushi-royale-thumbnail.jpg" alt="Sangokushi Royale Thumbnail" class="project-thumbnail" width="400" height="225" loading="lazy">
-                        </figure>
+                        <div class="card-top-section">
+                            <img src="images/projects/s-online-thumbnail.jpg" alt="Project thumbnail" class="project-thumbnail">
+                            <video class="project-video" loop muted playsinline preload="none">
+                                <source src="videos/s-online-demo.mp4" type="video/mp4">
+                            </video>
+                        </div>
                         <div class="project-details">
-                            <h3 class="project-title-card">Sangokushi Royale</h3>
-                            <p class="project-role-card">Role: Feature Planner</p>
-                            <p class="project-summary-card">Developed monthly update plans and designed core features like characters and skills.</p>
-                            <a href="projects/sangokushi-royale.html" class="view-project-button">VIEW CASE FILE</a>
+                            <h3 class="project-title-card">S Online</h3>
+                            <p class="project-role-card">Role: Game Operator</p>
+                            <p class="project-summary-card">Korean Fantasy MMORPG</p>
+                            <a href="projects/project-page.html" class="view-project-button">VIEW CASE FILE</a>
                         </div>
                     </article>
                 </div>
@@ -185,7 +205,7 @@
             <section id="skills" class="game-section skill-tree-panel">
                 <h2 class="section-title">
                     <svg class="section-icon"><use href="#icon-skills" /></svg>
-                     SKILL TREE 
+                    SKILL TREE
                 </h2>
                 <div class="skill-tree-container">
                     <div class="skill-tree-main-title">
@@ -226,7 +246,7 @@
             <section id="contact" class="game-section comm-log-panel">
                 <h2 class="section-title">
                     <svg class="section-icon"><use href="#icon-contact" /></svg>
-                     ESTABLISH COMMS 
+                    ESTABLISH COMMS
                 </h2>
                 <div class="content-box contact-info">
                     <p>Transmission successful! Ready to collaborate on your next epic adventure.</p>
@@ -279,7 +299,8 @@
         <source src="sounds/hover.wav" type="audio/wav">
     </audio>
 
-    <script>// Back to top button
+    <script>
+        // Back to top button
         document.getElementById('back-to-top').addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
@@ -307,5 +328,22 @@
         if (reducedMotion) {
             document.documentElement.style.setProperty('--animation-speed', '0.01ms');
         }</script>
+
+    <script>
+        // Video playback on hover
+        document.querySelectorAll('.card-top-section').forEach(section => {
+            const video = section.querySelector('.project-video');
+            if (!video) return;
+
+            section.addEventListener('mouseenter', () => {
+                video.play().catch(e => console.log("Video play prevented:", e));
+            });
+
+            section.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+    </script>
 </body>
 </html>
