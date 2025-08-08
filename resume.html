@@ -3,185 +3,558 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Nham Than - Resume // PLAYER STATS</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <title>Le Nham Than - Game Designer Resume</title>
+    <style>
+        /* GENERAL GAME THEME STYLES */
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+        :root {
+            /* Color palette */
+            --game-bg-color: #1a1a2e;
+            --primary-ui-color: #00bcd4;
+            --secondary-ui-color: #ffeb3b;
+            --text-color: #e0e0e0;
+            --heading-color: #ffeb3b;
+            --panel-bg-color: rgba(30, 30, 46, 0.9);
+            --border-color: #00838f;
+            --button-bg-color: #007bff;
+            --button-hover-color: #0056b3;
+            --error-color: #ff0000;
+            /* Animation speed */
+            --animation-speed: 0.4s;
+        }
+
+        body {
+            font-family: 'VT323', monospace;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--game-bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            width: 100%;
+            margin: 20px auto;
+            border: 5px solid var(--border-color);
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+            background-color: rgba(10, 10, 20, 0.95);
+            padding: 25px;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .resume-container::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 5px;
+                background: linear-gradient(90deg, var(--primary-ui-color), var(--secondary-ui-color));
+            }
+
+        h1 {
+            color: var(--secondary-ui-color);
+            border-bottom: 3px solid var(--primary-ui-color);
+            padding-bottom: 10px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            color: var(--secondary-ui-color);
+            margin-top: 30px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 16px;
+            border-bottom: 2px dashed var(--primary-ui-color);
+            padding-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+            .header-info span {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background: rgba(0, 188, 212, 0.2);
+                padding: 8px 15px;
+                border-radius: 30px;
+                border: 1px solid var(--primary-ui-color);
+            }
+
+        /* ENHANCED JOB HEADER STYLES */
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 25px 0 10px 0;
+            padding: 12px 15px;
+            background: rgba(0, 188, 212, 0.1);
+            border-left: 4px solid var(--primary-ui-color);
+            border-radius: 4px;
+            transition: all var(--animation-speed) ease;
+        }
+
+            .job-header:hover {
+                background: rgba(0, 188, 212, 0.2);
+                transform: translateX(3px);
+            }
+
+        .job-title-container {
+            flex: 1;
+        }
+
+        .company-name {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.1em;
+            color: var(--secondary-ui-color);
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px rgba(255, 235, 59, 0.3);
+        }
+
+        .job-position {
+            font-family: 'VT323', monospace;
+            font-size: 1.4em;
+            color: var(--primary-ui-color);
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .job-date {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8em;
+            color: var(--secondary-ui-color);
+            background: rgba(0, 0, 0, 0.4);
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid var(--primary-ui-color);
+            white-space: nowrap;
+        }
+
+        ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            position: relative;
+            color: var(--text-color);
+        }
+
+            li::before {
+                content: "•";
+                color: var(--secondary-ui-color);
+                font-weight: bold;
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+            }
+
+        a {
+            color: var(--primary-ui-color);
+            text-decoration: none;
+            transition: all 0.3s;
+            border-bottom: 1px dotted var(--primary-ui-color);
+        }
+
+            a:hover {
+                color: var(--secondary-ui-color);
+                border-bottom: 1px solid var(--secondary-ui-color);
+            }
+
+        .section {
+            margin-bottom: 30px;
+            background-color: rgba(30, 30, 46, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: inset 0 0 10px rgba(0, 188, 212, 0.2);
+        }
+
+        .key-results {
+            font-weight: bold;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: rgba(255, 235, 59, 0.1);
+            border-left: 4px solid var(--secondary-ui-color);
+            color: var(--text-color);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, var(--primary-ui-color), #00838f);
+            color: #000;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+            .back-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+                background: linear-gradient(45deg, #00838f, var(--primary-ui-color));
+                color: #000;
+            }
+
+        /* Add these new styles for download buttons */
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, var(--primary-ui-color), #00838f);
+            color: #000;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+            .download-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+                background: linear-gradient(45deg, #00838f, var(--primary-ui-color));
+            }
+
+            .download-btn::before {
+                content: "↓ ";
+            }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: var(--text-color);
+        }
+
+        strong {
+            color: var(--text-color);
+        }
+
+        /* CRT Scanlines */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0.1) 50%, transparent 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: overlay;
+        }
+
+        @media (max-width: 768px) {
+            .job-header {
+                flex-direction: column;
+            }
+
+            .job-date {
+                margin-top: 5px;
+                align-self: flex-start;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            .header-info {
+                gap: 10px;
+            }
+
+                .header-info span {
+                    padding: 6px 12px;
+                    font-size: 14px;
+                }
+        }
+
+        /* NEW: Portfolio-style buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-btn {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.9em;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 12px 24px;
+            background-color: #000;
+            border: 2px solid var(--primary-ui-color);
+            border-radius: 5px;
+            box-shadow: 3px 3px 0px rgba(0, 188, 212, 0.5);
+            transition: all var(--animation-speed) ease-out;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+
+            .portfolio-btn:hover,
+            .portfolio-btn:focus {
+                background-color: var(--primary-ui-color);
+                color: var(--game-bg-color);
+                box-shadow: 0 0 10px var(--primary-ui-color), 0 0 20px var(--primary-ui-color);
+                transform: translate(1px, 1px);
+            }
+
+            .portfolio-btn:active {
+                background-color: var(--secondary-ui-color);
+                color: var(--game-bg-color);
+                box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+                transform: translate(2px, 2px);
+            }
+
+            .portfolio-btn::before {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                right: 6px;
+                width: 0;
+                height: 0;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-bottom: 0 solid transparent;
+                border-top: 10px solid var(--text-color);
+                z-index: 2;
+                animation: bounceUpDown 1.5s infinite ease-in-out;
+            }
+
+            .portfolio-btn::after {
+                content: '';
+                position: absolute;
+                top: 39px;
+                right: 8px;
+                width: 0;
+                height: 0;
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-bottom: 0 solid transparent;
+                border-top: 8px solid var(--game-bg-color);
+                z-index: 3;
+                animation: bounceUpDown 1.5s infinite ease-in-out;
+            }
+
+        @keyframes bounceUpDown {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+    </style>
 </head>
 <body>
-    <div class="game-container">
-        <header class="game-hud">
-            <nav class="game-nav">
+
+    <div class="resume-container">
+        <div class="action-buttons">
+            <a href="index.html" class="portfolio-btn">← Back to Portfolio</a>
+        </div>
+
+        <h1>LE NHAM THAN</h1>
+
+        <div class="action-buttons">
+            <a href="resume/LeNhamThan_Resume_EN.pdf" class="portfolio-btn" download="LeNhamThan_Resume_EN">↓ Download(EN) </a>
+            <a href="resume/LeNhamThan_Resume_VN.pdf" class="portfolio-btn" download="LeNhamThan_Resume_VN">↓ Download(VN) </a>
+        </div>
+
+        <div class="header-info">
+            <span>📧 Lnthan.ftu@gmail.com</span>
+            <span>📞 (+84) 357 254 663</span>
+            <span>🌍 Hanoi, Vietnam</span>
+            <span>🔗 <a href="http://www.linkedin.com/in/le-than-7a7256214" target="_blank">LinkedIn</a></span>
+        </div>
+
+        <div class="section">
+            <h2>ABOUT ME</h2>
+            <p><strong>Game Designer</strong> and <strong>Project Manager</strong> with 10 years of experience in the gaming industry. Expertise in game design documentation, cross-functional team collaboration, and project leadership. My dream is creating great games that users around the world can enjoy and have a great time playing.</p>
+        </div>
+
+        <div class="section">
+            <h2>WORK EXPERIENCE</h2>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title-container">
+                        <div class="company-name">AMANOTES</div>
+                        <div class="job-position">Game Designer</div>
+                    </div>
+                    <div class="job-date">Dec 2024 – Present</div>
+                </div>
                 <ul>
-                    <li><a href="index.html" class="nav-button">Main Menu</a></li>
-                    <li><a href="index.html#about" class="nav-button">Back to Portfolio</a></li>
+                    <li>Amanotes is the #1 music/rhythm game publisher in the world, with over 3 billion total downloads.</li>
+                    <li>As the Game Designer for the studio's biggest game -- <a href="https://play.google.com/store/apps/details?id=com.youmusic.magictiles&hl=vi" target="_blank">Magic Tiles 3</a>, I made Game Design Document (GDD) and detailed update plan with all the assets requirements, work with Data Analyst to fine tune </li>
+                    <li>I also work with Musicians to make songs/beat maps for the game.</li>
                 </ul>
-            </nav>
-            <h1 class="game-title">Le Nham Than // Combat Log</h1>
-            <p class="project-subtitle">Game Design & Project Management Expertise</p>
-
-            <div class="resume-download-buttons">
-                <a href="resume-en.pdf" download class="nav-button">Download Resume [EN]</a>
-                <a href="resume-vn.pdf" download class="nav-button">Download Resume [VN]</a>
             </div>
-        </header>
 
-        <main class="game-main-screen resume-screen">
-            <section id="contact-info" class="game-section data-log-panel contact-resume">
-                <h2 class="section-title">// CONTACT INFO //</h2>
-                <div class="content-box">
-                    [cite_start]<p><strong>Email:</strong> <a href="mailto:Lnthan.ftu@gmail.com" class="contact-link">Lnthan.ftu@gmail.com</a></p> [cite: 2]
-                    [cite_start]<p><strong>Phone:</strong> (035) 725-4663</p> [cite: 2]
-                    [cite_start]<p><strong>Location:</strong> Hanoi, Vietnam</p> [cite: 2]
-                    <p><strong>LinkedIn:</strong> <a href="www.linkedin.com/in/le-than-7a7256214" target="_blank" class="contact-link">linkedin.com/in/le-nham-than</a></p>
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title-container">
+                        <div class="company-name">TheOne Game Studio</div>
+                        <div class="job-position">Project Lead & Lead Game Designer</div>
+                    </div>
+                    <div class="job-date">Dec 2022 – Dec 2024</div>
                 </div>
-            </section>
+                <ul>
+                    <li>TheOne is a new startup video game studio that focuses mainly on Casual, Hyper Casual game with a few outsourcing projects, notably -<a href="https://yeehagames.com/game/Chibi-Clash" target="_blank">Chibi Clash</a> with an Canadian client (Kuma Games).</li>
+                    <li>As Project Lead/Game Designer, I made GDD and detailed update plan with all the assets that the game need (coding, UI/UX, visual effects, sound effects); managed the task on ClickUp/Jira. I also handled any communications with the client.</li>
+                    <p class="key-results">Key Results: This project, which ran for over 2 years, funded the game studio at the starting phase, and contributed a large percentage of the studio's revenue.</p>
+                    <li>The Project: <a href="https://chibi.gg/" target="_blank">https://chibi.gg/</a></li>
+                    <li>As Lead Game Designer, I managed guideline for creating game design documents; interviewed and mentored new game designers.</li>
+                </ul>
+            </div>
 
-            <section id="work-experience" class="game-section data-log-panel">
-                <h2 class="section-title">// WORK EXPERIENCE //</h2>
-
-                <div class="resume-entry content-box">
-                    [cite_start]<h3>Amanotes</h3> [cite: 4]
-                    [cite_start]<p class="role">Game Designer</p> [cite: 6]
-                    [cite_start]<p class="date">Dec 2024 - Present</p> [cite: 5]
-                    <ul>
-                        [cite_start]
-                        <li>Make Game Design Document (GDD) and detailed update plan with all the assets requirements. [cite: 8]</li>
-                        [cite_start]
-                        <li>Work with various departments (Developers, QAs, Artists, Data Analysts, Musicians) to fine-tune and ensure the best game experience for users of Magic Tiles 3. [cite: 8, 9]</li>
-                    </ul>
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title-container">
+                        <div class="company-name">Icetea Labs – Desports.gg</div>
+                        <div class="job-position">Project Manager & Business Analyst</div>
+                    </div>
+                    <div class="job-date">Nov 2021 - Dec 2022</div>
                 </div>
+                <ul>
+                    <li><a href="https://pbs.twimg.com/ext_tw_video_thumb/1633730179158687746/pu/img/PG9JBUG68uV8Wlvl?format=jpg&name=large" target="_blank">Desports.gg</a> is an Esports organizing platform utilizing Blockchain Technology.</li>
+                    <li>As Project manager/Lead Business Analyst, I create, review and revise all the Requirements of the project and create detailed update plan with all the assets that the platform needs (coding, UI/UX), and manage the task on ClickUp to make sure everything going smoothly, then I present the project progress to the CEO and Project Lead at the end of each sprint.</li>
+                    <p class="key-results">Key Results: This is the main platform for the biggest online Player's Unknown Battlegrounds in South East Asia with a prize pool of $35,000</p>
+                    <li>The Tournament: <a href="https://liquipedia.net/pubg/PUBG_SEA_Invitational/2022" target="_blank">https://liquipedia.net/pubg/PUBG_SEA_Invitational/2022</a></li>
+                </ul>
+            </div>
 
-                <div class="resume-entry content-box">
-                    [cite_start]<h3>TheOne Game Studio</h3> [cite: 10]
-                    [cite_start]<p class="role">Project Manager – Lead Game Designer</p> [cite: 11]
-                    <p class="date">Dec. [cite_start]2022 – Dec 2024</p> [cite: 10]
-                    <ul>
-                        [cite_start]
-                        <li>Created Game Design Document (GDD) and detailed update plan with all the assets that the game need (coding, UI/UX, visual effects, sound effects). [cite: 13]</li>
-                        [cite_start]
-                        <li>Managed tasks closely on ClickUp/Jira, ensuring everything worked up to standard according to client requests (Chibi Clash). [cite: 14]</li>
-                        [cite_start]
-                        <li>Handled all communications with the international client (Kuma Games). [cite: 15]</li>
-                        [cite_start]
-                        <li>Ensured the project funded the studio at the starting phase and contributed a large percentage of revenue. [cite: 16]</li>
-                        [cite_start]
-                        <li>As Lead Game Designer, I create, review, revise, improve guideline documents for creating any game design documents used within the studio; [cite: 18]</li>
-                        [cite_start]
-                        <li>Interview, recruit and mentor new game designers. [cite: 19]</li>
-                    </ul>
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title-container">
+                        <div class="company-name">Icetea Labs – Mirai Studio</div>
+                        <div class="job-position">Lead Game Designer</div>
+                    </div>
+                    <div class="job-date">Jul 2021 - Mar 2022</div>
                 </div>
+                <ul>
+                    <li>Mirai Studio is the game studio of Icetea Labs, focus on making the NFT project -- <a href="https://www.youtube.com/watch?v=MuutlO4RvNU" target="_blank">Mechmaster</a> and other mobile games.</li>
+                    <li>As Lead Game Designer, I make GDD to conceptualize, implement, and maintain gameplay systems that revolve around giant robots (Mecha) fighting against each other; create and maintain comprehensive documentation (such as design outlines, diagrams, and visual mockups) that details the triggers, interactions, and subsequent events of specific features or aspects of gameplay.</li>
+                </ul>
+            </div>
 
-                <div class="resume-entry content-box">
-                    [cite_start]<h3>Icetea Labs – Desports.gg</h3> [cite: 20]
-                    [cite_start]<p class="role">Project Manager – Lead Business Analyst</p> [cite: 21]
-                    <p class="date">Nov. [cite_start]2021 - Dec. 2022</p> [cite: 20]
-                    <ul>
-                        [cite_start]
-                        <li>Created, reviewed and revised all the Requirements of the project and created detailed update plan with all the assets that the platform needs (coding, UI/UX). [cite: 23]</li>
-                        [cite_start]
-                        <li>Managed tasks on ClickUp to make sure everything going smoothly, then presented the project progress to the CEO and Project Lead at the end of each sprint. [cite: 23]</li>
-                        [cite_start]
-                        <li>Main platform for the biggest online Player’s Unknown Battlegrounds in South East Asia with a prize pool of $35,000. [cite: 24]</li>
-                    </ul>
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title-container">
+                        <div class="company-name">VALOFE</div>
+                        <div class="job-position">Project Manager - Game Designer</div>
+                    </div>
+                    <div class="job-date">Apr 2020 - Jul 2021</div>
                 </div>
+                <ul>
+                    <li>Valofe is a Korean video game company that focus on making and distributing midcore/hardcore mobile and PC games.</li>
+                    <li>As Project Manager/Game Designer for the project <a href="https://youtu.be/QmQmWg722so?t=242" target="_blank">Fantasy War Tactics R</a>, I make yearly detailed update plan, schedule, control, and coordinate tasks for artists, developers, and quality assurances(QA); design game features, storylines, characters, skills, dungeons, level layouts, sales packages; interview and mentor other planners, review their update plans and make adjustments.</li>
+                </ul>
+            </div>
 
-                <div class="resume-entry content-box">
-                    [cite_start]<h3>Icetea Labs – Mirai Studio</h3> [cite: 26]
-                    [cite_start]<p class="role">Lead Game Designer</p> [cite: 27]
-                    <p class="date">Jul. [cite_start]2021 - Mar. 2022</p> [cite: 26]
-                    <ul>
-                        [cite_start]
-                        <li>Conceptualized, implemented, and maintained gameplay systems that revolve around giant robots (Mecha) fighting against each other. [cite: 29]</li>
-                        [cite_start]
-                        <li>Created and maintained comprehensive documentation (such as design outlines, diagrams, and visual mockups) that details the triggers, interactions, and subsequent events of specific features or aspects of gameplay. [cite: 30]</li>
-                    </ul>
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title-container">
+                        <div class="company-name">DeNA Vietnam</div>
+                        <div class="job-position">Feature Planner - Quality Assurance</div>
+                    </div>
+                    <div class="job-date">Apr 2017 - Apr 2020</div>
                 </div>
+                <ul>
+                    <li>Punch Entertainment (Formerly known as DENA. Vietnam) is a Japan-based video game company that focus on making and distributing midcore/hardcore mobile and PC games.</li>
+                    <li>As feature planner for the project <a href="https://m-apps.qoo-app.com/en-US/app/1837" target="_blank">Sangokushi Royale</a>, I make monthly detailed update plans for core features of Sangokushi Royale project adjustments; design game features, characters, skills, level layouts; coordinate with artists, developers, and QAs to ensure the quality of the game.</li>
+                </ul>
+            </div>
 
-                <div class="resume-entry content-box">
-                    [cite_start]<h3>VALOFE</h3> [cite: 31]
-                    [cite_start]<p class="role">Project Manager - Game Designer</p> [cite: 32]
-                    <p class="date">Apr. [cite_start]2020 - Jul. 2021</p> [cite: 31]
-                    <ul>
-                        [cite_start]
-                        <li>Made yearly detailed update plan, schedule, control, and coordinated tasks for artists, developers, and quality assurances (QA) for Fantasy War Tactics R. [cite: 34]</li>
-                        [cite_start]
-                        <li>Designed game features, storylines, characters, skills, dungeons, level layouts, sales packages. [cite: 35]</li>
-                        [cite_start]
-                        <li>Interviewed and mentored other planners, reviewed their update plans and made adjustments. [cite: 36]</li>
-                    </ul>
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title-container">
+                        <div class="company-name">Soha Games</div>
+                        <div class="job-position"> Game Operator - Marketing Executive</div>
+                    </div>
+                    <div class="job-date">Feb 2015 - Apr 2017</div>
                 </div>
+                <ul>
+                    <li>Soha Game is one of the biggest video game publisher in Vietnam that focus on making and distributing mobile games.</li>
+                    <li>As Marketer/Game Operator, I identify strengths of various projects, and creatively produce effective marketing campaigns for them to make sure the games can reach many quality and loyal users; work closely with R&D department to search for potential games to publish.</li>
+                </ul>
+            </div>
+        </div>
 
-                <div class="resume-entry content-box">
-                    [cite_start]<h3>Punch Entertainment</h3> [cite: 37]
-                    [cite_start]<p class="role">Feature Planner</p> [cite: 38]
-                    <p class="date">Apr. [cite_start]2017 - Apr. 2020</p> [cite: 37]
-                    <ul>
-                        [cite_start]
-                        <li>Made monthly detailed update plans for core features of the Sangokushi Royale project adjustments. [cite: 40]</li>
-                        [cite_start]
-                        <li>Designed game features, characters, skills, level layouts. [cite: 41]</li>
-                        [cite_start]
-                        <li>Coordinated with artists, developers, and QAs to ensure the quality of the game. [cite: 41]</li>
-                    </ul>
-                </div>
+        <div class="section">
+            <h2>EDUCATION</h2>
+            <div class="job-header">
+                <span class="job-title">Foreign Trade University | Bachelor's Degree, International Economics</span>
+                <span class="job-date">May 2014</span>
+            </div>
+        </div>
 
-                <div class="resume-entry content-box">
-                    [cite_start]<h3>Soha Games</h3> [cite: 42]
-                    [cite_start]<p class="role">Marketing Executive - Game Operator</p> [cite: 43]
-                    <p class="date">Feb. [cite_start]2015 - Apr. 2017</p> [cite: 42]
-                    <ul>
-                        [cite_start]
-                        <li>Identified strengths of various projects, and creatively produced effective marketing campaigns for them to make sure the games can reach many quality and loyal users. [cite: 45]</li>
-                        [cite_start]
-                        <li>Worked closely with R&D department to search for potential games to publish. [cite: 46]</li>
-                    </ul>
-                </div>
-            </section>
+        <div class="section">
+            <h2>SKILLS & INTERESTS</h2>
+            <ul>
+                <li><strong>Technical (Entry Level):</strong> C, C#, C++, Unity Engine, Git, SQL</li>
+                <li><strong>Certifications:</strong> TOIEC 935, TOEFL IBT 102, JLPT N3</li>
+                <li><strong>Interests:</strong> Video games, Competitive Esports, Gaming Reddits
+            </ul>
+        </div>
 
-            <section id="education" class="game-section data-log-panel">
-                <h2 class="section-title">// EDUCATION //</h2>
-                <div class="resume-entry content-box">
-                    [cite_start]<h3>Foreign Trade University</h3> [cite: 48]
-                    [cite_start]<p class="degree">Bachelor Degree</p> [cite: 49]
-                    [cite_start]<p class="major">Major: Advance Program – International Economics</p> [cite: 50]
-                    [cite_start]<p class="date">May 2014</p> [cite: 48]
-                </div>
-            </section>
-
-            <section id="skills-certs" class="game-section data-log-panel">
-                <h2 class="section-title">// SKILLS & CERTIFICATIONS //</h2>
-                <div class="content-box">
-                    [cite_start]<h3>Skills:</h3> [cite: 54]
-                    <ul class="skills-list">
-                        [cite_start]
-                        <li>Game Design [cite: 54]</li>
-                        [cite_start]
-                        <li>Game Operating [cite: 54]</li>
-                        [cite_start]
-                        <li>Project Management [cite: 54]</li>
-                        [cite_start]
-                        <li>Strategic Planning [cite: 54]</li>
-                        [cite_start]
-                        <li>Basic C, C++ (Conceptual) [cite: 53]</li>
-                    </ul>
-                    [cite_start]<h3>Certifications:</h3> [cite: 52]
-                    <ul class="certs-list">
-                        [cite_start]
-                        <li>TOIEC 935 [cite: 52]</li>
-                        [cite_start]
-                        <li>TOEFL IBT 100 [cite: 52]</li>
-                        [cite_start]
-                        <li>JLPT N3 [cite: 52]</li>
-                    </ul>
-                </div>
-            </section>
-        </main>
-
-        <footer class="game-footer">
-            <p>// END OF TRANSMISSION // © 2025 Le Nham Than. All Rights Reserved. // LOG COMPLETE //</p>
-        </footer>
+        <div class="action-buttons">
+            <a href="index.html" class="portfolio-btn">← Back to Portfolio</a>
+        </div>
     </div>
 </body>
 </html>

@@ -9,6 +9,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Web\\game-design-portfolio\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Web\\game-design-portfolio\\resume.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resume.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,15 +34,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "style.css",
-              "DocumentMoniker": "D:\\Web\\game-design-portfolio\\css\\style.css",
-              "RelativeDocumentMoniker": "css\\style.css",
-              "ToolTip": "D:\\Web\\game-design-portfolio\\css\\style.css",
-              "RelativeToolTip": "css\\style.css",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAAAMMCAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-07-16T12:16:34.505Z"
+              "DocumentIndex": 2,
+              "Title": "resume.html",
+              "DocumentMoniker": "D:\\Web\\game-design-portfolio\\resume.html",
+              "RelativeDocumentMoniker": "resume.html",
+              "ToolTip": "D:\\Web\\game-design-portfolio\\resume.html",
+              "RelativeToolTip": "resume.html",
+              "ViewState": "AgIAAJQBAAAAAAAAAAAAwKoBAABRAQAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-08-04T09:17:22.047Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -48,9 +53,22 @@
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "D:\\Web\\game-design-portfolio\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AgIAANUAAAAAAAAAAAAAAOIAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-07-16T12:05:50.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "style.css",
+              "DocumentMoniker": "D:\\Web\\game-design-portfolio\\css\\style.css",
+              "RelativeDocumentMoniker": "css\\style.css",
+              "ToolTip": "D:\\Web\\game-design-portfolio\\css\\style.css",
+              "RelativeToolTip": "css\\style.css",
+              "ViewState": "AgIAADICAAAAAAAAAAAuwHECAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-07-16T12:16:34.505Z",
               "EditorCaption": ""
             }
           ]

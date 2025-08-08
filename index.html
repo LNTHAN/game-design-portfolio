@@ -14,27 +14,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-    <svg style="display:none;">
-        <!-- RPG Avatar Icon -->
-        <symbol id="icon-player" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
-        </symbol>
-
-        <!-- Scroll Icon -->
-        <symbol id="icon-projects" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
-        </symbol>
-
-        <!-- Skill Tree Icon -->
-        <symbol id="icon-skills" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M22 11V3h-7v3H9V3H2v8h7V8h2v10h4v3h7v-8h-7v3h-2V8h2v3h7zM7 9H4V5h3v4zm10 6h3v4h-3v-4zm0-10h3v4h-3V5z" />
-        </symbol>
-
-        <!-- Radio Tower Icon -->
-        <symbol id="icon-contact" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm7-7H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1.75 9c0 .23-.02.46-.05.68l1.48 1.16c.13.11.17.3.08.45l-1.4 2.42c-.09.15-.27.21-.43.15l-1.74-.7c-.36.28-.76.51-1.18.69l-.26 1.85c-.03.17-.18.3-.35.3h-2.8c-.17 0-.32-.13-.35-.29l-.26-1.85c-.43-.18-.82-.41-1.18-.69l-1.74.7c-.16.06-.34 0-.43-.15l-1.4-2.42c-.09-.15-.05-.34.08-.45l1.48-1.16c-.03-.23-.05-.46-.05-.69 0-.23.02-.46.05-.68l-1.48-1.16c-.13-.11-.17-.3-.08-.45l1.4-2.42c.09-.15.27-.21.43-.15l1.74.7c.36-.28.76-.51 1.18-.69l.26-1.85c.03-.17.18-.3.35-.3h2.8c.17 0 .32.13.35.29l.26 1.85c.43.18.82.41 1.18.69l1.74-.7c.16-.06.34 0 .43.15l1.4 2.42c.09.15.05.34-.08.45l-1.48 1.16c.03.23.05.46.05.69z" />
-        </symbol>
-    </svg>
 </head>
 
 <body>
@@ -52,13 +31,13 @@
 
     <div class="game-container">
         <header class="game-hud">
-            <h1 class="game-title">Than Nham Le // Game Designer</h1>
+            <h1 class="game-title">Than Nham Le - Game Designer</h1>
         </header>
 
         <main class="game-main-screen">
             <section id="about" class="game-section data-log-panel">
                 <h2 class="section-title">
-                    <svg class="section-icon"><use href="#icon-player" /></svg>
+                    <img src="images/profile.gif" alt="" class="section-gif-icon">
                     PLAYER STATS
                 </h2>
 
@@ -78,13 +57,14 @@
                             </div>
                             <div class="sub-jobs">
                                 <span class="job-label">SUB JOBS:</span>
-                                <span class="job-value">Project Manager, Game Planner</span>
+                                <span class="job-value">Project Manager, Game Developer(In Training)</span>
                             </div>
                         </div>
 
                         <!-- Introduction -->
                         <div class="player-bio">
-                            <p>Greetings, player! I'm Le Nham Than, a game design specialist with multi-class expertise in system design and team leadership. Currently accepting new party invitations.</p>
+                            <p>Greetings, player! I'm Le Nham Than, a <strong>Game Designer</strong> and <strong>Project Manager</strong> with 10 years of experience in the gaming industry. My dream is creating great games that users around the world can enjoy and have a great time playing! </p>
+                            <p>Currently accepting new party invitations.</p>
                         </div>
 
                         <!-- Favorite Games -->
@@ -104,8 +84,8 @@
             <section id="projects" class="game-section">
                 <div class="project-log-header">
                     <h2 class="section-title">
-                        <svg class="section-icon"><use href="#icon-projects" /></svg>
-                        PROJECT LOG
+                        <img src="images/projects.gif" alt="" class="section-gif-icon">
+                        TROPHIES
                     </h2>
                 </div>
 
@@ -202,42 +182,112 @@
                 </div>
             </section>
 
+            <!-- Inside the <body> section, replace the skills section with this: -->
             <section id="skills" class="game-section skill-tree-panel">
                 <h2 class="section-title">
-                    <svg class="section-icon"><use href="#icon-skills" /></svg>
+                    <img src="images/skills.gif" alt="" class="section-gif-icon">
                     SKILL TREE
                 </h2>
                 <div class="skill-tree-container">
-                    <div class="skill-tree-main-title">
-                        SKILLS
-                    </div>
-                    <div class="skill-tree-branches">
-                        <div class="skill-category branch-1">
-                            <h3>Game Design Core</h3>
-                            <ul>
-                                <li class="skill-node"><span class="skill-icon"></span>Game Design Documentation (GDD)</li>
-                                <li class="skill-node"><span class="skill-icon"></span>Gameplay Systems Design</li>
-                                <li class="skill-node"><span class="skill-icon"></span>Level Design & Layout</li>
-                                <li class="skill-node"><span class="skill-icon"></span>UI/UX Design Concepts</li>
-                            </ul>
+                    <div class="skill-tree-panel">
+                        <!-- Your existing container -->
+                        <div class="expertise-note">
+                            <span class="pixel-icon">!</span>
+                            <span>Skill Levels: Lv.1 (Beginner) → Lv.10 (Master)</span>
                         </div>
+                        <div class="skill-tree-branches">
+                            <div class="skill-category" data-category="design">
+                                <h3>
+                                    <svg class="category-icon" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,7V9H13V7H11M11,11V17H13V11H11Z" />
+                                    </svg>
+                                    Game Design Core
+                                </h3>
+                                <ul>
+                                    <li class="skill-node" data-skill="gdd">
+                                        <svg class="skill-icon" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M7,7V9H17V7H7M7,11V13H17V11H7M7,15V17H14V15H7Z" />
+                                        </svg>
+                                        Game Design Documentation Lv.7
+                                    </li>
+                                    <li class="skill-node" data-skill="systems">
+                                        <svg class="skill-icon" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L5,8.09V15.91L12,19.85L19,15.91V8.09L12,4.15Z" />
+                                        </svg>
+                                        Gameplay Systems Design Lv.5
+                                    </li>
+                                    <li class="skill-node" data-skill="level">
+                                        <svg class="skill-icon" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M12,2L1,21H23M12.6,11H11.4L11,8H13M12,14.5A1,1 0 0,1 13,15.5A1,1 0 0,1 12,16.5A1,1 0 0,1 11,15.5A1,1 0 0,1 12,14.5Z" />
+                                        </svg>
+                                        Level Design & Layout Lv.6
+                                    </li>
+                                    <li class="skill-node" data-skill="uiux">
+                                        <svg class="skill-icon" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,10.5A1.5,1.5 0 0,0 10.5,12A1.5,1.5 0 0,0 12,13.5A1.5,1.5 0 0,0 13.5,12A1.5,1.5 0 0,0 12,10.5M7.5,10.5A1.5,1.5 0 0,0 6,12A1.5,1.5 0 0,0 7.5,13.5A1.5,1.5 0 0,0 9,12A1.5,1.5 0 0,0 7.5,10.5M16.5,10.5A1.5,1.5 0 0,0 15,12A1.5,1.5 0 0,0 16.5,13.5A1.5,1.5 0 0,0 18,12A1.5,1.5 0 0,0 16.5,10.5Z" />
+                                        </svg>
+                                        UI/UX Design Concepts Lv.5
+                                    </li>
+                                </ul>
+                            </div>
 
-                        <div class="skill-category branch-2">
-                            <h3>Technical Proficiency</h3>
-                            <ul>
-                                <li class="skill-node"><span class="skill-icon"></span>Game Engines: Unity, Unreal</li>
-                                <li class="skill-node"><span class="skill-icon"></span>Scripting: Basic C, C++</li>
-                                <li class="skill-node"><span class="skill-icon"></span>Design Tools: Miro, Figma</li>
-                            </ul>
-                        </div>
+                            <div class="skill-category" data-category="tech">
+                                <h3>
+                                    <svg class="category-icon" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M4,6H20V16H4M20,18A2,2 0 0,0 22,16V6C22,4.89 21.1,4 20,4H4C2.89,4 2,4.89 2,6V16A2,2 0 0,0 4,18H0V20H24V18H20Z" />
+                                    </svg>
+                                    Technical Proficiency
+                                </h3>
+                                <ul>
+                                    <li class="skill-node" data-skill="engines">
+                                        <svg class="skill-icon" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M8,3L6,5V8H5C3.85,8 3,8.85 3,10V20C3,21.11 3.89,22 5,22H10V20H5V10H19V20H14V22H19C20.11,22 21,21.11 21,20V10C21,8.85 20.15,8 19,8H18V5L16,3H8M8,5H16V7H8V5M7,13H9V15H7V13M11,13H13V15H11V13M15,13H17V15H15V13Z" />
+                                        </svg>
+                                        Game Engines: Unity, Unreal Lv.2
+                                    </li>
+                                    <li class="skill-node" data-skill="scripting">
+                                        <svg class="skill-icon" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z" />
+                                        </svg>
+                                        Scripting: Basic C, C++ Lv.2
+                                    </li>
+                                    <li class="skill-node" data-skill="tools">
+                                        <svg class="skill-icon" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M21,7.24L19.08,9.16L14.84,4.92L16.76,3C17.93,1.83 19.83,1.83 21,3C22.17,4.17 22.17,6.07 21,7.24M4.92,14.84L9.16,19.08L7.24,21C6.07,22.17 4.17,22.17 3,21C1.83,19.83 1.83,17.93 3,16.76L4.92,14.84M19.07,2.93L17.66,4.34L19.66,6.34L21.07,4.93C22,4 22,2.5 21.07,1.57C20.15,0.64 18.65,0.64 17.72,1.57L15.81,3.5L17.81,5.5L19.07,4.24L20.5,5.66L19.07,7.07L17.66,5.66L15.5,7.83L12.34,4.66L14.34,2.66L15.75,1.25C16,1 16.33,0.93 16.59,1.03L9.55,8.07C9.27,8.35 9.27,8.82 9.55,9.1L14.9,14.45C15.18,14.73 15.65,14.73 15.93,14.45L22.97,7.41C23.07,7.67 23,8 22.75,8.25L21.34,9.66L19.34,7.66L16.17,9.83L14.76,8.42L16.76,6.42L15.34,5L13.93,6.41L11.93,4.41L13.34,3L12.93,2.59C12.5,2.16 11.89,2 11.34,2.09L6.25,2.92C5.75,3 5.43,3.46 5.5,3.96L6.33,9.05C6.43,9.59 6.16,10.18 5.72,10.62L2.59,13.75C2.22,14.13 2.22,14.74 2.59,15.12L8.88,21.41C9.26,21.78 9.87,21.78 10.25,21.41L13.38,18.28C13.82,17.84 14.41,17.57 14.95,17.67L20.04,18.5C20.54,18.57 21,18.25 21.08,17.75L21.91,12.66C22,12.11 21.84,11.5 21.41,11.07L19.07,8.73L20.5,7.31L19.07,5.9L17.66,7.31L15.66,5.31L17.07,3.9L19.07,2.93Z" />
+                                        </svg>
+                                        Design Tools: Miro, Figma Lv.4
+                                    </li>
+                                </ul>
+                            </div>
 
-                        <div class="skill-category branch-3">
-                            <h3>Management/ Leadership</h3>
-                            <ul>
-                                <li class="skill-node"><span class="skill-icon"></span>Project Management</li>
-                                <li class="skill-node"><span class="skill-icon"></span>Strategic Planning</li>
-                                <li class="skill-node"><span class="skill-icon"></span>Team Coordination</li>
-                            </ul>
+                            <div class="skill-category" data-category="management">
+                                <h3>
+                                    <svg class="category-icon" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M12,3L2,12H5V20H19V12H22L12,3M12,7.7C14.1,7.7 15.8,9.4 15.8,11.5C15.8,13.6 14.1,15.3 12,15.3C9.9,15.3 8.2,13.6 8.2,11.5C8.2,9.4 9.9,7.7 12,7.7M7,17V18H17V17C17,14.3 14.3,12 12,12C9.7,12 7,14.3 7,17Z" />
+                                    </svg>
+                                    Management/Leadership
+                                </h3>
+                                <ul>
+                                    <li class="skill-node" data-skill="pm">
+                                        <svg class="skill-icon" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M15,3A2,2 0 0,1 17,5V19A2,2 0 0,1 15,21H9A2,2 0 0,1 7,19V5A2,2 0 0,1 9,3H15M15,5H9V19H15V5M10,16V18H12V16H10M14,16V18H16V16H14M10,12V14H12V12H10M14,12V14H16V12H14M10,8V10H12V8H10M14,8V10H16V8H14Z" />
+                                        </svg>
+                                        Project Management Lv.5
+                                    </li>
+                                    <li class="skill-node" data-skill="strategy">
+                                        <svg class="skill-icon" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M12,2L1,21H23M12,6L19.53,19H4.47M12,8.35L15.65,15H8.35" />
+                                        </svg>
+                                        Strategic Planning Lv.4
+                                    </li>
+                                    <li class="skill-node" data-skill="team">
+                                        <svg class="skill-icon" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z" />
+                                        </svg>
+                                        Team Coordination Lv.6
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -245,55 +295,55 @@
 
             <section id="contact" class="game-section comm-log-panel">
                 <h2 class="section-title">
-                    <svg class="section-icon"><use href="#icon-contact" /></svg>
+                    <img src="images/contact.gif" alt="" class="section-gif-icon">
                     ESTABLISH COMMS
                 </h2>
-                <div class="content-box contact-info">
-                    <p>Transmission successful! Ready to collaborate on your next epic adventure.</p>
-                    <p><strong>> Email:</strong> <a href="mailto:Lnthan.ftu@gmail.com" class="contact-link">Lnthan.ftu@gmail.com</a></p>
-                    <p><strong>> Phone (Vietnam):</strong> (+84) 357 254 663</p>
-                    <p><strong>> LinkedIn:</strong> <a href="https://www.linkedin.com/in/le-than-7a7256214" target="_blank" class="contact-link">Connect on LinkedIn</a></p>
-                    <p class="final-message">Thank you for visiting! May your framerates be high and your bugs be few.</p>
+
+                <div class="contact-grid">
+                    <!-- Email (Original icon) -->
+                    <a href="mailto:Lnthan.ftu@gmail.com" class="contact-channel" aria-label="Email">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z" />
+                        </svg>
+                        <span class="contact-value">Lnthan.ftu@gmail.com</span>
+                    </a>
+
+                    <!-- LinkedIn (Original icon) -->
+                    <a href="https://www.linkedin.com/in/le-than-7a7256214" target="_blank" class="contact-channel" aria-label="LinkedIn">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                        <span class="contact-value">in/le-than-7a7256214</span>
+                    </a>
+
+                    <!-- GitHub (Original icon) -->
+                    <a href="https://github.com/LNTHAN" target="_blank" class="contact-channel" aria-label="GitHub">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        <span class="contact-value">@LNTHAN</span>
+                    </a>
+
+                    <!-- Phone (New, matching style) -->
+                    <div class="contact-channel" aria-label="Phone">
+                        <svg class="contact-icon" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M20 15.5c-1.2 0-2.5-.2-3.6-.6h-.3c-.3 0-.5.1-.7.3l-2.2 2.2c-2.8-1.5-5.2-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.4-.5-3.6 0-.5-.5-1-1-1H4c-.5 0-1 .5-1 1 0 9.4 7.6 17 17 17 .5 0 1-.5 1-1v-3.5c0-.5-.5-1-1-1M19 12h2a9 9 0 0 0-9-9v2c3.9 0 7 3.1 7 7m-4 0h2c0-2.8-2.2-5-5-5v2c1.7 0 3 1.3 3 3z" />
+                        </svg>
+                        <span class="contact-value">(+84) 357 254 663</span>
+                    </div>
                 </div>
             </section>
         </main>
 
         <footer class="game-footer">
-            <div class="footer-social">
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/le-than-7a7256214" target="_blank" aria-label="LinkedIn">
-                    <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg>
-                </a>
-
-                <!-- Email -->
-                <a href="mailto:Lnthan.ftu@gmail.com" aria-label="Email">
-                    <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z" />
-                    </svg>
-                </a>
-
-                <!-- GitHub -->
-                <a href="https://github.com/LNTHAN" target="_blank" aria-label="GitHub">
-                    <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                </a>
+            <div class="final-message">
+                <!-- Moved here -->
+                <p>THANKS FOR PLAYING!</p>
             </div>
-
             <div class="sticky-footer-button">
-                <button id="back-to-top" class="nav-button">↑ POWER UP ↑</button>
+                <button id="back-to-top" class="nav-button">POWER UP ↑</button>
             </div>
         </footer>
-    </div>
-
-    <div class="loading-screen">
-        <div class="loading-animation">
-            <span>LOADING</span>
-            <span class="loading-dots">...</span>
-        </div>
-    </div>
 
     <audio id="hover-sound" preload="auto">
         <source src="sounds/hover.wav" type="audio/wav">
@@ -345,5 +395,6 @@
             });
         });
     </script>
+    </div>
 </body>
 </html>
