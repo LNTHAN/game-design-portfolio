@@ -345,9 +345,40 @@
             </div>
         </footer>
 
-    <audio id="hover-sound" preload="auto">
-        <source src="sounds/hover.wav" type="audio/wav">
-    </audio>
+        <audio id="hover-sound" preload="auto">
+            <source src="sounds/hover.wav" type="audio/wav">
+        </audio>
+    </div>
+
+    <!-- Famicom Modal -->
+    <div id="famicom-modal" class="famicom-modal">
+        <div class="famicom-console-container">
+            <!-- TV Screen -->
+            <div class="crt-screen">
+                <div class="video-container">
+                    <video class="modal-video" autoplay loop muted>
+                        <source src="" type="video/mp4">
+                        Your browser doesn't support HTML5 video.
+                    </video>
+                </div>
+
+                <div class="project-info">
+                    <h3 class="modal-project-title">Project Title</h3>
+                    <p class="modal-project-role">Role: Game Designer</p>
+                    <div class="modal-project-description">
+                        Project description will appear here.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thumbnail Carousel -->
+            <div class="cartridge-carousel">
+                <!-- Dynamically filled by JS -->
+            </div>
+        </div>
+
+        <button class="close-modal" aria-label="Close modal">×</button>
+    </div>
 
     <script>
         // Back to top button
@@ -395,6 +426,7 @@
             });
         });
     </script>
-    </div>
+
+    <script src="js/famicom-modal.js"></script>
 </body>
 </html>
