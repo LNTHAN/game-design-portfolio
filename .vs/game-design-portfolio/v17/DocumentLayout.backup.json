@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\Web\\game-design-portfolio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Web\\game-design-portfolio\\resume.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resume.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Web\\game-design-portfolio\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Web\\game-design-portfolio\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Web\\game-design-portfolio\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Web\\game-design-portfolio\\js\\famicom-modal.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\famicom-modal.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Web\\game-design-portfolio\\resume.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resume.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,16 +38,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "resume.html",
               "DocumentMoniker": "D:\\Web\\game-design-portfolio\\resume.html",
               "RelativeDocumentMoniker": "resume.html",
               "ToolTip": "D:\\Web\\game-design-portfolio\\resume.html",
               "RelativeToolTip": "resume.html",
-              "ViewState": "AgIAANcBAAAAAAAAAAAWwOYBAABDAAAAAAAAAA==",
+              "ViewState": "AgIAAIQBAAAAAAAAAAAWwJ0BAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-08-04T09:17:22.047Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-04T09:17:22.047Z"
             },
             {
               "$type": "Document",
@@ -57,36 +56,35 @@
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "D:\\Web\\game-design-portfolio\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAFQBAAAAAAAAAAAuwGIBAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-07-16T12:05:50.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "style.css",
               "DocumentMoniker": "D:\\Web\\game-design-portfolio\\css\\style.css",
               "RelativeDocumentMoniker": "css\\style.css",
               "ToolTip": "D:\\Web\\game-design-portfolio\\css\\style.css",
               "RelativeToolTip": "css\\style.css",
-              "ViewState": "AgIAANgDAAAAAAAAAAAAAPoDAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAPYCAAAAAAAAAAAWwBMDAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-07-16T12:16:34.505Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "famicom-modal.js",
               "DocumentMoniker": "D:\\Web\\game-design-portfolio\\js\\famicom-modal.js",
               "RelativeDocumentMoniker": "js\\famicom-modal.js",
               "ToolTip": "D:\\Web\\game-design-portfolio\\js\\famicom-modal.js",
               "RelativeToolTip": "js\\famicom-modal.js",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAwC0AAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAACQBAAAAAAAAAAAwwFUAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-08-11T11:46:21.412Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-11T11:46:21.412Z"
             }
           ]
         }
