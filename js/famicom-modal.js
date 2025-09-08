@@ -44,6 +44,45 @@ document.addEventListener('DOMContentLoaded', function () {
                 </ul>
             `
         },
+        "Gang Battle 3D": {
+            title: "Gang Battle 3D",
+            role: "Game Designer",
+            description: `
+                <h4>🎵 Game Overview</h4>
+                <p>PLACEHOLDER</p>
+                
+                <h4>🛠️ Contribution</h4>
+                <ul>
+                    <li>PLACEHOLDER</li>
+                </ul>
+            `
+        },
+        "Draw Bridge": {
+            title: "Magic Tiles 3",
+            role: "Game Designer",
+            description: `
+                <h4>🎵 Game Overview</h4>
+                <p>PLACEHOLDER</p>
+                
+                <h4>🛠️ Contribution</h4>
+                <ul>
+                    <li>PLACEHOLDER</li>
+                </ul>
+            `
+        },
+        "Car Climber": {
+            title: "Magic Tiles 3",
+            role: "Game Designer",
+            description: `
+                <h4>🎵 Game Overview</h4>
+                <p>PLACEHOLDER</p>
+
+                <h4>🛠️ Contribution</h4>
+                <ul>
+                    <li>PLACEHOLDER</li>
+                </ul>
+            `
+        },
         "Mech Master": {
             title: "Mech Master",
             role: "Game Designer",
