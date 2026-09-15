@@ -1,4 +1,4 @@
-﻿// Enhanced Famicom Modal JavaScript - Fixed for all 6 projects
+// Enhanced Famicom Modal JavaScript - Fixed for all 6 projects
 document.addEventListener('DOMContentLoaded', function () {
     console.log("Enhanced Famicom Modal with all projects loaded!");
 
@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p>A competitive PvP RPG combining inventory management with roguelike elements. Players battle in real-time while managing limited equipment slots and randomized loot drops.</p>
                 
                 <h4>🛠️ Contribution</h4>
-                <p>I designed everything in the game from scratch - game modes, enemies, equipments, special events, power ups, shop and economy.</p>
+                <p>I designed everything in the game from scratch - game modes, enemies, equipment, special events, power-ups, shop and economy.</p>
                 <ul>
-                    <li>Designed roguelite PvE mode with 30 different waves (enemies and bosses)</li>
-                    <li>Designed over a hundred different items of multiple archetypes.</li>
-                    <li>Design a full PvP ranking system using Matchmaking Ratings.</li>
-                    <li>Planned feature timeline, managed a complete team of developers, ui/ux, vfx, sfx artists.</li>
+                    <li>Designed a rogue-lite PvE mode with 30 waves of enemies and bosses.</li>
+                    <li>Designed over a hundred items across multiple archetypes.</li>
+                    <li>Designed a full PvP ranking system using Matchmaking Ratings.</li>
+                    <li>Planned feature timeline, managed a full team of developers and UI/UX, VFX and SFX artists.</li>
                 </ul>
             `
         },
@@ -39,47 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 <h4>🛠️ Contribution</h4>
                 <ul>
                     <li>Designed "Deluxe Mode" for the game - introducing new gameplay elements, power ups and economy.</li>
-                    <li>Worked closely with Data Analysts to conduct small and large scale tests, concluded how to move forward with the feature and finetuned datas.</li>
-                    <li>Supported Musicians to make 100+ new songs/beat maps.</li>
-                </ul>
-            `
-        },
-        "Gang Battle 3D": {
-            title: "Gang Battle 3D",
-            role: "Game Designer",
-            description: `
-                <h4>🎵 Game Overview</h4>
-                <p>PLACEHOLDER</p>
-                
-                <h4>🛠️ Contribution</h4>
-                <ul>
-                    <li>PLACEHOLDER</li>
-                </ul>
-            `
-        },
-        "Draw Bridge": {
-            title: "Magic Tiles 3",
-            role: "Game Designer",
-            description: `
-                <h4>🎵 Game Overview</h4>
-                <p>PLACEHOLDER</p>
-                
-                <h4>🛠️ Contribution</h4>
-                <ul>
-                    <li>PLACEHOLDER</li>
-                </ul>
-            `
-        },
-        "Car Climber": {
-            title: "Magic Tiles 3",
-            role: "Game Designer",
-            description: `
-                <h4>🎵 Game Overview</h4>
-                <p>PLACEHOLDER</p>
-
-                <h4>🛠️ Contribution</h4>
-                <ul>
-                    <li>PLACEHOLDER</li>
+                    <li>Worked closely with data analysts to run small- and large-scale tests, decided how to move forward with the feature, and fine-tuned the data.</li>
+                    <li>Supported musicians in producing 100+ new songs and beatmaps.</li>
                 </ul>
             `
         },
@@ -91,9 +52,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p>A deep tactical RPG where players command customizable mecha units in turn-based combat. Features complex mech building and strategic positioning.</p>
                 
                 <h4>⚙️ Key Features</h4>
-                <p>I designed everything in the game- Mecha races, stories, world building, mecha parts, stats, skills, pilots, fighting maps and terrains.</p>
+                <p>I designed everything in the game — mecha races, stories, world building, mecha parts, stats, skills, pilots, fighting maps and terrains.</p>
                 <ul>
-                    <li>Designed 7 mecha races with hundreds of parts combination, 50+ different skills and passives for the equipments.</li>
+                    <li>Designed 7 mecha races with hundreds of part combinations, and 50+ skills and passives for the equipment.</li>
                     <li>Designed 5 rarities of pilots, all with different models and skills.</li>
                     <li>Designed 3 different maps with terrains and weather effects.</li>
                     <li>Planned fan events outside of the game and raised ~$1 million.</li>
@@ -109,9 +70,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 
                 <h4>🛠️ My Contributions</h4>
                 <ul>
-                    <li>Desiged 4 new characters with 24 new skils and 12 new equipments.</li>
+                    <li>Designed 4 new characters with 24 new skills and 12 new pieces of equipment.</li>
                     <li>Revamped 50+ old characters with new stats, skills and equipments.</li>
-                    <li>Adjust and update over 10 ingame events.</li>
+                    <li>Adjusted and updated over 10 in-game events.</li>
                     <li>Redesigned all IAP packages ingame and raise average weekly revenue from $2.5k to $10k.</li>
                 </ul>
             `
@@ -127,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <ul>
                     <li>Designed 10+ new generals and equipments.</li>
                     <li>Designed 100+ new scenario maps with gameplay followed closely with story from historic Three Kingdoms battles.</li>
-                    <li>In charge of managing and updating Guild vs. Guild battles, 1 of the 4 major events in the game</li>
+                    <li>Managed and updated Guild vs. Guild battles, one of the four major events in the game.</li>
                 </ul>
             `
         },
@@ -140,9 +101,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 
                 <h4>🛠️ My Contributions</h4>
                 <ul>
-                    <li>Scheduled new weekly and monthly events</li>
-                    <li>Suggested new features, enemies and boss to the main team</li>
-                    <li>Held fanpage events to push IAP spending</li>
+                    <li>Scheduled new weekly and monthly events.</li>
+                    <li>Suggested new features, enemies and bosses to the main team.</li>
+                    <li>Held fan-page events to drive IAP spending.</li>
                 </ul>
             `
         }
