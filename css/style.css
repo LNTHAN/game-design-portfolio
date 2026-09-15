@@ -1579,3 +1579,93 @@ body::after {
     margin-top: 5px;
     margin-bottom: 5px
 }
+
+/* ==========================================================================
+   MOBILE PASS
+   ========================================================================== */
+
+/* Horizontal overflow fix.
+   .game-container was width:95% PLUS 15px padding PLUS a 5px border under the
+   default content-box model, so it measured 387px inside a 375px viewport and
+   the whole page rubber-banded sideways. */
+.game-container,
+.skill-category,
+.sticky-nav-container {
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+
+    /* Sticky nav was 232px tall -- 28% of an 812px viewport, permanently.
+       Cause: .nav-button font-size was bumped to 1em on mobile (LARGER than
+       the .9em desktop size) and every li carried its own margin. */
+    .sticky-nav-container {
+        padding: 6px 4px;
+        background-color: #12122a; /* was 95% translucent: body text showed through */
+    }
+
+    .game-nav ul {
+        gap: 6px;
+        padding: 0 4px;
+    }
+
+    .game-nav li {
+        margin: 0;
+    }
+
+    .nav-button {
+        font-size: .58em;
+        padding: 8px 10px;
+        margin: 0;
+        line-height: 1.1;
+    }
+
+    /* These arrows are positioned with a hardcoded top:39px, which no longer
+       lines up once the button is shorter. */
+    .nav-button::before,
+    .nav-button::after {
+        display: none;
+    }
+
+    html {
+        scroll-padding-top: 96px;
+    }
+
+    /* 'PLAYER STATS' was clipping off the right edge. The 100x100 icon ate 27%
+       of a 375px screen before the text got any room. */
+    .section-gif-icon,
+    .skill-tree-panel .section-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .section-title {
+        font-size: clamp(.8rem, 4.2vw, 1.8rem);
+        padding: 10px 8px;
+        gap: 10px;
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-button {
+        font-size: .52em;
+        padding: 7px 8px;
+    }
+
+    .section-gif-icon,
+    .skill-tree-panel .section-icon {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* Skill icons were landing on top of the label text on phones.
+   The mobile rule `.skill-node { padding: 8px 12px }` is a shorthand, so it
+   reset the 45px left padding that reserves room for the absolutely
+   positioned .skill-icon. Restore it, sized for the 18px mobile icon. */
+@media (max-width: 768px) {
+    .skill-node {
+        padding-left: 38px;
+    }
+}
