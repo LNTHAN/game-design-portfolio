@@ -225,11 +225,11 @@ html {
 
 @keyframes subtle-glow {
     0%,100% {
-        text-shadow: 0 0 6px currentColor
+        text-shadow: 0 0 8px rgba(255,235,59,.3)
     }
 
     50% {
-        text-shadow: 0 0 12px currentColor
+        text-shadow: 0 0 12px rgba(255,235,59,.5)
     }
 }
 
@@ -243,27 +243,8 @@ html {
     background: var(--primary-ui-color)
 }
 
-#about .section-title {
-    color: #6eff8e;
-    border-color: #00bcd4
-}
-
-#projects .section-title {
-    color: #ff8be6;
-    border-color: #b300ff
-}
-
-#skills .section-title, .job-label, .section-title::before {
+.job-label, .section-title::before {
     color: var(--primary-ui-color)
-}
-
-#skills .section-title {
-    border-color: #ff9100
-}
-
-#contact .section-title {
-    color: #6df7ff;
-    border-color: #06f
 }
 
 @media (prefers-reduced-motion) {
@@ -1921,7 +1902,7 @@ body::after {
     gap: 16px;
     flex-wrap: wrap;
     text-align: left;
-    border-bottom: 3px solid #b300ff;
+    border-bottom: 3px solid var(--primary-ui-color);
     margin-bottom: 30px;
 }
 
