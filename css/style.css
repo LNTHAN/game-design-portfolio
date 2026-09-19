@@ -1990,3 +1990,79 @@ body::after {
         font-size: .62em;
     }
 }
+
+/* ==========================================================================
+   ABOUT SECTION — tightened so the work starts higher up the page
+   ========================================================================== */
+
+/* The 100px heading icon was setting a 127px line box on every section title.
+   Scoped above the phone breakpoints so the 44/36px mobile sizes still win. */
+@media (min-width: 769px) {
+    .section-gif-icon,
+    .skill-tree-panel .section-icon {
+        width: 72px;
+        height: 72px;
+    }
+
+    .section-title {
+        padding: 8px 20px;
+        margin-bottom: 18px;
+    }
+}
+
+#about {
+    padding: 22px;
+}
+
+#about .player-profile {
+    padding: 18px;
+}
+
+#about .job-roles {
+    padding: 12px 16px;
+}
+
+#about .player-bio {
+    padding: 14px 18px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+#about .player-bio p {
+    margin-bottom: 8px;
+}
+
+#about .player-bio p:last-child {
+    margin-bottom: 0;
+}
+
+#about .games-title {
+    margin: 12px 0 8px;
+}
+
+#about .game-tags {
+    margin: 8px 0 0;
+}
+
+/* Phones stack the profile into a single column, so the section is tallest
+   exactly where the screen is shortest. */
+@media (max-width: 768px) {
+    #about .player-profile {
+        padding: 14px;
+    }
+
+    #about .avatar-container {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 10px;
+    }
+
+    #about .job-roles {
+        padding: 10px 14px;
+    }
+
+    #about .player-bio {
+        padding: 12px 14px;
+        font-size: 1.05em;
+    }
+}
