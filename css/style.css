@@ -1735,9 +1735,9 @@ body::after {
    ========================================================================== */
 
 .project-gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     align-items: start;
-    gap: 25px;
+    gap: 22px;
 }
 
 .project-card {
@@ -2068,7 +2068,7 @@ body::after {
 }
 
 /* ==========================================================================
-   SCROLLSPY — section dots down the left edge
+   SCROLLSPY RAIL — numbered sections, active highlight, scroll progress
    ========================================================================== */
 
 .visually-hidden {
@@ -2083,84 +2083,115 @@ body::after {
     border: 0;
 }
 
-.section-dots {
+.section-rail {
     position: fixed;
-    left: 10px;
+    left: 16px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 900;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 26px;
+    padding-left: 11px;
 }
 
-/* Square rather than round, to sit with the pixel type. */
-.section-dot {
+/* Track runs behind the numbers; the fill reports scroll position. */
+.rail-track {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: rgba(76, 175, 80, .25);
+}
+
+.rail-progress {
+    width: 100%;
+    height: 0;
+    background: var(--primary-ui-color);
+    box-shadow: 0 0 6px var(--primary-ui-color);
+}
+
+.rail-item {
     position: relative;
-    display: block;
-    width: 12px;
-    height: 12px;
-    box-sizing: border-box;
-    background: rgba(0, 0, 0, .6);
-    border: 2px solid var(--primary-ui-color);
-    box-shadow: 0 0 6px rgba(76, 175, 80, .35);
+    display: flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
     transition: all var(--animation-speed) ease-out;
 }
 
-/* Label rides out on hover. It overlaps the page edge, but only while
-   pointed at, so it never steals layout space. */
-.section-dot::after {
-    content: attr(data-label);
-    position: absolute;
-    left: 22px;
-    top: 50%;
-    transform: translateY(-50%) translateX(-6px);
-    padding: 6px 10px;
+.rail-num {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    margin-left: -11px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Press Start 2P', cursive;
-    font-size: .55rem;
+    font-size: .5rem;
+    color: var(--primary-ui-color);
+    background: var(--game-bg-color);
+    border: 2px solid var(--primary-ui-color);
+    transition: all var(--animation-speed) ease-out;
+}
+
+.rail-label {
+    font-family: VT323, monospace;
+    font-size: .95em;
     letter-spacing: 1px;
     white-space: nowrap;
-    color: var(--secondary-ui-color);
-    background: #0b0b18;
-    border: 2px solid var(--primary-ui-color);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity var(--animation-speed) ease-out,
-                transform var(--animation-speed) ease-out;
+    color: rgba(245, 245, 245, .5);
+    transition: all var(--animation-speed) ease-out;
 }
 
-.section-dot:hover,
-.section-dot:focus-visible {
+.rail-item:hover .rail-label,
+.rail-item:focus-visible .rail-label {
+    color: var(--text-color);
+}
+
+.rail-item:hover .rail-num,
+.rail-item:focus-visible .rail-num {
     background: var(--primary-ui-color);
+    color: var(--game-bg-color);
     box-shadow: 0 0 10px var(--primary-ui-color);
-    outline: 0;
 }
 
-.section-dot:hover::after,
-.section-dot:focus-visible::after {
-    opacity: 1;
-    transform: translateY(-50%) translateX(0);
+.rail-item:focus-visible {
+    outline: 2px solid var(--secondary-ui-color);
+    outline-offset: 4px;
 }
 
-.section-dot.is-active {
+.rail-item.is-active .rail-num {
     background: var(--secondary-ui-color);
     border-color: var(--secondary-ui-color);
+    color: var(--game-bg-color);
     box-shadow: 0 0 10px var(--secondary-ui-color);
-    transform: scale(1.25);
 }
 
-/* The page body is 1200px wide and centred, so below this there is no gutter
-   to sit in without covering content. The sticky nav already covers
-   navigation at those widths. */
-@media (max-width: 1100px) {
-    .section-dots {
+.rail-item.is-active .rail-label {
+    color: var(--secondary-ui-color);
+}
+
+/* Give the rail its own column: cap the body width so a gutter always exists
+   for it, rather than letting the rail overlap the page. */
+@media (min-width: 1200px) {
+    .game-container {
+        width: min(95%, 1080px, calc(100vw - 380px));
+        max-width: none;
+    }
+}
+
+@media (max-width: 1199px) {
+    .section-rail {
         display: none;
     }
 }
 
 @media print {
-    .section-dots {
+    .section-rail {
         display: none !important;
     }
 }
