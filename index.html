@@ -36,6 +36,13 @@
         </nav>
     </div>
 
+    <nav class="section-dots" aria-label="Section navigation">
+        <a href="#about" class="section-dot" data-label="PLAYER STATS"><span class="visually-hidden">Player stats</span></a>
+        <a href="#projects" class="section-dot" data-label="TROPHIES"><span class="visually-hidden">Trophies</span></a>
+        <a href="#skills" class="section-dot" data-label="SKILL TREE"><span class="visually-hidden">Skill tree</span></a>
+        <a href="#contact" class="section-dot" data-label="ESTABLISH COMMS"><span class="visually-hidden">Establish comms</span></a>
+    </nav>
+
     <div class="game-container">
         <header class="game-hud">
             <h1 class="game-title">Than Nham Le - Game Designer</h1>
@@ -70,7 +77,7 @@
 
                         <!-- Introduction -->
                         <div class="player-bio">
-                            <p>Greetings, player! I'm Le Nham Than, a Game Designer and Project Manager with <strong>10 years in the gaming industry</strong>. My dream is creating great games that users around the world can enjoy and have a great time playing!</p>
+                            <p>Greetings, player! I'm Le Nham Than, a Game Designer and Project Manager with <strong>10 years in the gaming industry</strong>. I'm now building my own in <strong>Unreal Engine 5 and C++</strong>. My dream is creating great games that users around the world can enjoy and have a great time playing!</p>
                             <p>Currently accepting new party invitations.</p>
                         </div>
 
@@ -429,6 +436,52 @@
         if (reducedMotion) {
             document.documentElement.style.setProperty('--animation-speed', '0.01ms');
         }</script>
+
+    <script>
+        // Scrollspy: highlight the dot for whichever section is under the
+        // middle of the viewport, and expose it to assistive tech.
+        (function () {
+            const dots = [...document.querySelectorAll('.section-dot')];
+            const targets = dots
+                .map(a => document.querySelector(a.getAttribute('href')))
+                .filter(Boolean);
+
+            if (!targets.length || !('IntersectionObserver' in window)) return;
+
+            function setActive(section) {
+                dots.forEach(a => {
+                    const on = a.getAttribute('href') === '#' + section.id;
+                    a.classList.toggle('is-active', on);
+                    if (on) {
+                        a.setAttribute('aria-current', 'true');
+                    } else {
+                        a.removeAttribute('aria-current');
+                    }
+                });
+            }
+
+            const inBand = new Set();
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        inBand.add(e.target);
+                    } else {
+                        inBand.delete(e.target);
+                    }
+                });
+                if (!inBand.size) return;
+                // Several sections can straddle the band at once; the highest
+                // one on screen is the one the reader is actually in.
+                const top = [...inBand].sort(
+                    (a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top
+                )[0];
+                setActive(top);
+            }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+            targets.forEach(t => io.observe(t));
+            setActive(targets[0]);
+        })();
+    </script>
 
     <script>
         // Tap to expand a card: touch devices have no hover state.

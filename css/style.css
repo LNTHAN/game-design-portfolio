@@ -2066,3 +2066,101 @@ body::after {
         font-size: 1.05em;
     }
 }
+
+/* ==========================================================================
+   SCROLLSPY — section dots down the left edge
+   ========================================================================== */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.section-dots {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Square rather than round, to sit with the pixel type. */
+.section-dot {
+    position: relative;
+    display: block;
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, .6);
+    border: 2px solid var(--primary-ui-color);
+    box-shadow: 0 0 6px rgba(76, 175, 80, .35);
+    text-decoration: none;
+    transition: all var(--animation-speed) ease-out;
+}
+
+/* Label rides out on hover. It overlaps the page edge, but only while
+   pointed at, so it never steals layout space. */
+.section-dot::after {
+    content: attr(data-label);
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-6px);
+    padding: 6px 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: .55rem;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    color: var(--secondary-ui-color);
+    background: #0b0b18;
+    border: 2px solid var(--primary-ui-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--animation-speed) ease-out,
+                transform var(--animation-speed) ease-out;
+}
+
+.section-dot:hover,
+.section-dot:focus-visible {
+    background: var(--primary-ui-color);
+    box-shadow: 0 0 10px var(--primary-ui-color);
+    outline: 0;
+}
+
+.section-dot:hover::after,
+.section-dot:focus-visible::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+.section-dot.is-active {
+    background: var(--secondary-ui-color);
+    border-color: var(--secondary-ui-color);
+    box-shadow: 0 0 10px var(--secondary-ui-color);
+    transform: scale(1.25);
+}
+
+/* The page body is 1200px wide and centred, so below this there is no gutter
+   to sit in without covering content. The sticky nav already covers
+   navigation at those widths. */
+@media (max-width: 1100px) {
+    .section-dots {
+        display: none;
+    }
+}
+
+@media print {
+    .section-dots {
+        display: none !important;
+    }
+}
