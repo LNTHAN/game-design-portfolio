@@ -1669,3 +1669,82 @@ body::after {
         padding-left: 38px;
     }
 }
+
+
+
+/* ==========================================================================
+   FAMICOM MODAL — align the overlays to the console artwork
+   ========================================================================== */
+
+/* The box must match famicom-base.png (4096x2388 = 1.7152) exactly, or the
+   percentage overlays below refer to a rectangle the artwork does not fill.
+   Previously width AND height were both set, which makes the browser ignore
+   aspect-ratio entirely, and `contain` then letterboxed the art inside it. */
+.famicom-console-container {
+    width: min(95vw, 1200px, 86vh * 1.7152);
+    max-width: none;
+    height: auto;
+    aspect-ratio: 4096 / 2388;
+    background-size: 100% 100%;
+    justify-content: flex-start;
+}
+
+/* Measured off the artwork: screen spans x 10.5-89.5%, y 9-71.5%. */
+.crt-screen {
+    top: 9%;
+    left: 10.5%;
+    width: 79%;
+    height: 62.5%;
+    transform: none;
+}
+
+/* Strip spans the container exactly, so its percentages and the container's
+   percentages are the same coordinate system. Height 26% puts its top edge at
+   container y 74%, just above the slot mouth measured at y 76%. */
+.cartridge-carousel {
+    left: 0;
+    width: 100%;
+    max-width: none;
+    transform: none;
+    bottom: 0;
+    height: 26%;
+    padding: 0 6% 1.5%;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: visible;
+}
+
+/* Slot mouth sits at container y 76%, which is (76-74)/26 = 7.7% down the
+   strip. translateY(-100%) hangs the cartridge upward from that line, the way
+   a cartridge stands proud of the slot. */
+.cartridge-thumbnail.active {
+    position: absolute !important;
+    left: 50.5% !important;
+    top: 7.7% !important;
+    bottom: auto !important;
+    width: 10.5% !important;
+    height: auto !important;
+    aspect-ratio: 110 / 70;
+    transform: translate(-50%, -100%) !important;
+    z-index: 4;
+}
+
+/* Point the dashed slot marker at the real slot instead of container centre. */
+.famicom-console-container::after {
+    top: 71%;
+    left: 50.5%;
+    width: 11%;
+    height: 6%;
+    transform: translateX(-50%);
+}
+
+/* These carry padding and borders, so under content-box sizing their real
+   boxes were wider than the percentage asked for -- and because the carousel
+   is the containing block for the active cartridge, that error moved the
+   cartridge too. */
+.crt-screen,
+.cartridge-carousel,
+.famicom-console-container {
+    box-sizing: border-box;
+}
