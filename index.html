@@ -94,6 +94,20 @@
                         <img src="images/projects.gif" alt="" class="section-gif-icon">
                         TROPHIES
                     </h2>
+                    <button type="button" class="view-all-button" id="view-all-projects"
+                            aria-label="View all projects in the console browser">
+                        <svg class="nes-icon" viewBox="0 0 32 18" aria-hidden="true" focusable="false">
+                            <rect x="1" y="3" width="30" height="12" rx="1.5"
+                                  fill="none" stroke="currentColor" stroke-width="1.6"/>
+                            <rect x="6" y="6.5" width="2" height="5" fill="currentColor"/>
+                            <rect x="4.5" y="8" width="5" height="2" fill="currentColor"/>
+                            <rect x="13" y="10" width="3.4" height="1.6" rx=".8" fill="currentColor"/>
+                            <rect x="17.4" y="10" width="3.4" height="1.6" rx=".8" fill="currentColor"/>
+                            <circle cx="24.4" cy="9.6" r="1.7" fill="currentColor"/>
+                            <circle cx="28.2" cy="9.6" r="1.7" fill="currentColor"/>
+                        </svg>
+                        <span>VIEW ALL</span>
+                    </button>
                 </div>
 
                 <div class="project-gallery-grid">
@@ -417,16 +431,43 @@
         }</script>
 
     <script>
+        // Tap to expand a card: touch devices have no hover state.
+        // On pointer devices the mouse leaving clears it, so click and hover agree.
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', e => {
+                if (e.target.closest('.view-project-button')) return;
+                card.classList.toggle('is-open');
+            });
+            card.addEventListener('mouseleave', () => card.classList.remove('is-open'));
+        });
+
+        // VIEW ALL opens the console browser, which already lists every cartridge.
+        const viewAllBtn = document.getElementById('view-all-projects');
+        if (viewAllBtn) {
+            viewAllBtn.addEventListener('click', () => {
+                document.querySelector('.view-project-button')?.click();
+            });
+        }
+    </script>
+
+    <script>
         // Video playback on hover
-        document.querySelectorAll('.card-top-section').forEach(section => {
-            const video = section.querySelector('.project-video');
+        document.querySelectorAll('.project-card').forEach(card => {
+            const video = card.querySelector('.project-video');
             if (!video) return;
 
-            section.addEventListener('mouseenter', () => {
-                video.play().catch(e => console.log("Video play prevented:", e));
+            // Only reveal the clip once it is genuinely painting frames. The
+            // videos are preload="none", so on a first hover or a slow
+            // connection a CSS-only swap would show a black card instead of
+            // the artwork.
+            video.addEventListener('playing', () => card.classList.add('video-ready'));
+
+            card.addEventListener('mouseenter', () => {
+                video.play().catch(() => {});
             });
 
-            section.addEventListener('mouseleave', () => {
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('video-ready');
                 video.pause();
                 video.currentTime = 0;
             });

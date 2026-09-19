@@ -1748,3 +1748,264 @@ body::after {
 .famicom-console-container {
     box-sizing: border-box;
 }
+
+/* ==========================================================================
+   PROJECT CARDS — peek strip; the card grows and the panel slides down
+   ========================================================================== */
+
+.project-gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: start;
+    gap: 25px;
+}
+
+.project-card {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    text-align: left;
+    cursor: pointer;
+    transition: height var(--animation-speed) ease-in-out,
+                transform var(--animation-speed) ease-in-out,
+                box-shadow var(--animation-speed) ease-in-out;
+}
+
+/* Fixed height, pinned to the top: the artwork keeps its size while the card
+   grows underneath it, so the panel expands into new space instead of
+   swallowing the picture. */
+.card-top-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+}
+
+.project-thumbnail,
+.project-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Anchored to the bottom, so growing the card slides it down off the art. */
+.project-details {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    transform: none;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 12px 14px;
+    border-top: none;
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, .93) 0%,
+        rgba(0, 0, 0, .82) 50%,
+        rgba(0, 0, 0, 0) 100%);
+}
+
+/* Scoped to .project-details so these beat the existing
+   `.project-details h3, .project-details p { margin-bottom: 10px }` rule,
+   which is 0-1-1 and silently outranked the bare class selectors. */
+.project-details .project-title-card {
+    font-family: 'Press Start 2P', cursive;
+    font-size: .8rem;
+    line-height: 1.45;
+    color: var(--secondary-ui-color);
+    margin: 0 0 4px;
+}
+
+.project-details .project-role-card {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.35;
+    color: var(--primary-ui-color);
+}
+
+/* Collapsed with max-height rather than display:none, so it can animate. */
+.project-details .project-summary-card,
+.project-details .view-project-button {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: max-height var(--animation-speed) ease,
+                opacity var(--animation-speed) ease,
+                margin var(--animation-speed) ease,
+                padding var(--animation-speed) ease;
+}
+
+/* The card grows; the panel rides the bottom edge down with it. */
+.project-card:hover,
+.project-card:focus-within,
+.project-card.is-open {
+    height: 430px;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 188, 212, .6);
+    outline: 0;
+}
+
+.project-card:hover .project-details .project-summary-card,
+.project-card:focus-within .project-details .project-summary-card,
+.project-card.is-open .project-details .project-summary-card {
+    max-height: 8em;
+    opacity: .9;
+    margin: 10px 0 0;
+}
+
+/* border-box, or `width: 100%` plus 8px of padding makes the button 16px wider
+   than the text column above it and it hangs off the right edge. */
+.project-details .view-project-button {
+    box-sizing: border-box;
+}
+
+.project-card:hover .project-details .view-project-button,
+.project-card:focus-within .project-details .view-project-button,
+.project-card.is-open .project-details .view-project-button {
+    max-height: 4em;
+    opacity: 1;
+    width: 100%;
+    margin-top: 12px;
+    padding: 8px;
+}
+
+/* Once expanded the panel is mostly clear of the artwork, so it can go solid
+   without darkening the picture. */
+.project-card:hover .project-details,
+.project-card:focus-within .project-details,
+.project-card.is-open .project-details {
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, .95) 0%,
+        rgba(0, 0, 0, .95) 72%,
+        rgba(0, 0, 0, 0) 100%);
+}
+
+.project-card:hover .project-thumbnail,
+.project-card:focus-within .project-thumbnail,
+.project-card.is-open .project-thumbnail {
+    height: 100%;
+    transform: none;
+    object-position: center;
+}
+
+/* The clip is revealed by a class the script adds once the video is really
+   painting frames -- never by :hover alone. The videos are preload="none",
+   so a CSS-only swap would show a black card on a first or slow hover. */
+@media (hover: hover) {
+    .project-card.video-ready .project-thumbnail {
+        opacity: 0;
+    }
+
+    .project-card.video-ready .project-video {
+        opacity: 1;
+    }
+}
+
+.project-card:focus-visible {
+    outline: 3px solid var(--secondary-ui-color);
+    outline-offset: 2px;
+}
+
+/* --- TROPHIES header: title left, VIEW ALL right, one shared underline --- */
+
+.project-log-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    text-align: left;
+    border-bottom: 3px solid var(--primary-ui-color);
+    margin-bottom: 30px;
+}
+
+.project-log-header .section-title {
+    flex: 1 1 auto;
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.view-all-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: .62rem;
+    letter-spacing: 1px;
+    color: var(--text-color);
+    background-color: #000;
+    border: 2px solid var(--primary-ui-color);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 rgba(0, 188, 212, .5);
+    transition: all var(--animation-speed) ease-out;
+}
+
+.view-all-button:hover,
+.view-all-button:focus-visible {
+    background-color: var(--primary-ui-color);
+    color: var(--game-bg-color);
+    box-shadow: 0 0 10px var(--primary-ui-color), 0 0 20px var(--primary-ui-color);
+    transform: translateY(-2px);
+    outline: 0;
+}
+
+.view-all-button .nes-icon {
+    width: 30px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        height: 280px;
+    }
+
+    .card-top-section {
+        height: 280px;
+    }
+
+    .project-card:hover,
+    .project-card:focus-within,
+    .project-card.is-open {
+        height: 410px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        height: 250px;
+    }
+
+    .card-top-section {
+        height: 250px;
+    }
+
+    .project-card:hover,
+    .project-card:focus-within,
+    .project-card.is-open {
+        height: 385px;
+    }
+
+    .project-log-header {
+        justify-content: center;
+    }
+
+    /* 'VIEW CASE FILE' wrapped to two lines at this width. */
+    .project-details .view-project-button {
+        font-size: .62em;
+    }
+}
