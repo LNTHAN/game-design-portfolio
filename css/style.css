@@ -2415,7 +2415,12 @@ body::after {
    SPLASH — the door. One dominant portal, everything else small and peripheral
    ========================================================================== */
 
+/* Hidden unless the head script opts this load in, so it never flashes. */
 .splash {
+    display: none;
+}
+
+.splash-on .splash {
     position: fixed;
     inset: 0;
     z-index: 2000;
@@ -2438,7 +2443,7 @@ body::after {
     pointer-events: none;
 }
 
-body.splash-open {
+.splash-on body {
     overflow: hidden;
 }
 

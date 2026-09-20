@@ -17,6 +17,26 @@
     <meta name="twitter:title" content="Than Nham Le - Game Design Portfolio">
     <meta name="twitter:description" content="10 years designing mobile and PC games. Now building a tactical RPG solo in Unreal Engine 5.">
     <link rel="canonical" href="https://lnthan.github.io/game-design-portfolio/">
+    <script>
+        // Runs before first paint. Deciding here rather than at the end of
+        // <body> avoids flashing the splash at visitors who should not see it.
+        (function () {
+            // Flip to true when the intro is ready to go live for everyone.
+            var LIVE = false;
+
+            var force = /[?&]splash=1(?:&|$)/.test(location.search);
+            var seen = false;
+            try { seen = sessionStorage.getItem('splashSeen') === '1'; } catch (e) {}
+            var deep = location.hash.length > 1;
+
+            var show = force || (LIVE && !seen && !deep);
+            window.__splash = { show: show, force: force, live: LIVE };
+            if (show) {
+                document.documentElement.className += ' splash-on';
+            }
+        })();
+    </script>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -581,32 +601,19 @@
             const splash = document.getElementById('splash');
             if (!splash) return;
 
-            const SEEN = 'splashSeen';
+            const cfg = window.__splash || { show: false, force: false };
 
-            // ?splash=1 shows the intro on every load and never records that
-            // it was seen, so it can be reviewed repeatedly without clearing
-            // session storage between looks.
-            const force = /[?&]splash=1(?:&|$)/.test(window.location.search);
-
-            let seen = false;
-            try { seen = sessionStorage.getItem(SEEN) === '1'; } catch (e) {}
-
-            // Someone sent a link straight to a section: honour it.
-            const deepLink = window.location.hash.length > 1;
-
-            if (!force && (seen || deepLink)) {
+            if (!cfg.show) {
                 splash.remove();
                 return;
             }
 
-            document.body.classList.add('splash-open');
-
             function dismiss() {
-                if (!force) {
-                    try { sessionStorage.setItem(SEEN, '1'); } catch (e) {}
+                if (!cfg.force) {
+                    try { sessionStorage.setItem('splashSeen', '1'); } catch (e) {}
                 }
                 splash.classList.add('is-leaving');
-                document.body.classList.remove('splash-open');
+                document.documentElement.classList.remove('splash-on');
                 const done = () => splash.remove();
                 splash.addEventListener('transitionend', done, { once: true });
                 // transitionend never fires if motion is reduced to ~0s.
@@ -616,7 +623,7 @@
             document.getElementById('splash-enter').addEventListener('click', dismiss);
             document.getElementById('splash-skip').addEventListener('click', dismiss);
             document.addEventListener('keydown', e => {
-                if (e.key === 'Escape' && document.body.classList.contains('splash-open')) {
+                if (e.key === 'Escape' && document.documentElement.classList.contains('splash-on')) {
                     dismiss();
                 }
             });
