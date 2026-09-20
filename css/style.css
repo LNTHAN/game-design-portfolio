@@ -2410,3 +2410,331 @@ body::after {
         gap: 2px;
     }
 }
+
+/* ==========================================================================
+   SPLASH — the door. One dominant portal, everything else small and peripheral
+   ========================================================================== */
+
+.splash {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 24px;
+    box-sizing: border-box;
+    background:
+        radial-gradient(ellipse at 50% 42%, rgba(76, 175, 80, .10) 0%, rgba(10, 10, 20, 0) 60%),
+        #0a0a14;
+    opacity: 1;
+    transition: opacity .45s ease-out, transform .45s ease-out;
+}
+
+.splash.is-leaving {
+    opacity: 0;
+    transform: scale(1.04);
+    pointer-events: none;
+}
+
+body.splash-open {
+    overflow: hidden;
+}
+
+.splash-corner {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.splash-name {
+    font-family: 'Press Start 2P', cursive;
+    font-size: .72rem;
+    letter-spacing: 1px;
+    color: var(--secondary-ui-color);
+}
+
+.splash-job {
+    font-family: VT323, monospace;
+    font-size: 1em;
+    letter-spacing: 3px;
+    color: var(--primary-ui-color);
+}
+
+.splash-skip {
+    position: absolute;
+    top: 28px;
+    right: 24px;
+    padding: 8px 14px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: .55rem;
+    letter-spacing: 1px;
+    color: rgba(245, 245, 245, .55);
+    background: transparent;
+    border: 2px solid rgba(76, 175, 80, .4);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all var(--animation-speed) ease-out;
+}
+
+.splash-skip:hover,
+.splash-skip:focus-visible {
+    color: var(--text-color);
+    border-color: var(--primary-ui-color);
+    outline: 0;
+}
+
+.splash-centre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    text-align: center;
+}
+
+.splash-title {
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(.85rem, 2.4vw, 1.6rem);
+    line-height: 1.7;
+    letter-spacing: 2px;
+    color: var(--secondary-ui-color);
+    text-shadow: 0 0 12px rgba(255, 202, 40, .35);
+}
+
+/* Portal and call to action are one control, so the whole thing is
+   reachable by keyboard rather than being a clickable div. */
+.splash-enter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.portal {
+    position: relative;
+    display: block;
+    width: clamp(150px, 20vw, 230px);
+    aspect-ratio: 3 / 4;
+    /* Rounded top, flat base: a dungeon archway rather than a circle. */
+    border-radius: 50% 50% 10px 10px / 62% 62% 10px 10px;
+    overflow: hidden;
+}
+
+.portal-mouth {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        radial-gradient(ellipse at 50% 72%, rgba(140, 240, 170, .55) 0%, rgba(30, 90, 60, .35) 38%, rgba(4, 6, 12, .96) 72%),
+        #04060c;
+}
+
+.portal-rim {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 3px solid var(--primary-ui-color);
+    box-shadow:
+        0 0 22px rgba(76, 175, 80, .55),
+        inset 0 0 26px rgba(76, 175, 80, .35);
+    animation: portal-breathe 3.6s ease-in-out infinite;
+}
+
+@keyframes portal-breathe {
+    0%, 100% {
+        box-shadow: 0 0 18px rgba(76, 175, 80, .45), inset 0 0 20px rgba(76, 175, 80, .3);
+    }
+    50% {
+        box-shadow: 0 0 34px rgba(76, 175, 80, .8), inset 0 0 34px rgba(76, 175, 80, .5);
+    }
+}
+
+.splash-cta {
+    font-family: 'Press Start 2P', cursive;
+    font-size: .8rem;
+    letter-spacing: 2px;
+    color: var(--text-color);
+    transition: all var(--animation-speed) ease-out;
+}
+
+.splash-enter:hover .splash-cta,
+.splash-enter:focus-visible .splash-cta {
+    color: var(--secondary-ui-color);
+    text-shadow: 0 0 10px rgba(255, 202, 40, .6);
+}
+
+.splash-enter:hover .portal-rim,
+.splash-enter:focus-visible .portal-rim {
+    border-color: var(--secondary-ui-color);
+    box-shadow: 0 0 40px rgba(255, 202, 40, .7), inset 0 0 34px rgba(255, 202, 40, .45);
+    animation: none;
+}
+
+.splash-enter:focus-visible {
+    outline: 2px solid var(--secondary-ui-color);
+    outline-offset: 8px;
+}
+
+/* --- the dialogue window --- */
+
+.splash-foot {
+    width: 100%;
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.splash-dialogue {
+    display: flex;
+    align-items: stretch;
+    gap: 14px;
+    padding: 14px;
+    background: rgba(8, 8, 16, .92);
+    border: 2px solid var(--primary-ui-color);
+    border-radius: 6px;
+    box-shadow: 0 0 22px rgba(0, 0, 0, .6);
+}
+
+.dialogue-portrait {
+    flex: 0 0 auto;
+    width: 72px;
+    height: 72px;
+    border: 2px solid var(--primary-ui-color);
+    border-radius: 4px;
+    overflow: hidden;
+    background: #000;
+}
+
+.dialogue-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    image-rendering: pixelated;
+}
+
+.dialogue-body {
+    min-width: 0;
+}
+
+.dialogue-speaker {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 8px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: .7rem;
+    letter-spacing: 1px;
+    color: var(--secondary-ui-color);
+}
+
+.dialogue-title {
+    font-family: VT323, monospace;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    color: var(--primary-ui-color);
+}
+
+.dialogue-line {
+    margin: 0;
+    font-size: 1.1em;
+    line-height: 1.45;
+    color: var(--text-color);
+}
+
+.splash-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.splash-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    color: var(--primary-ui-color);
+    border: 2px solid rgba(76, 175, 80, .45);
+    border-radius: 4px;
+    transition: all var(--animation-speed) ease-out;
+}
+
+.splash-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.splash-icon:hover,
+.splash-icon:focus-visible {
+    color: var(--game-bg-color);
+    background: var(--primary-ui-color);
+    border-color: var(--primary-ui-color);
+    outline: 0;
+}
+
+.splash-resume {
+    margin-left: auto;
+    padding: 10px 16px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: .58rem;
+    letter-spacing: 1px;
+    color: #000;
+    background: var(--primary-ui-color);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all var(--animation-speed) ease-out;
+}
+
+.splash-resume:hover,
+.splash-resume:focus-visible {
+    background: var(--secondary-ui-color);
+    transform: translateY(-2px);
+    outline: 0;
+}
+
+@media (max-width: 600px) {
+    .splash {
+        padding: 20px 16px;
+        justify-content: center;
+        gap: 26px;
+    }
+
+    .splash-corner {
+        align-self: center;
+        align-items: center;
+    }
+
+    .splash-skip {
+        top: 16px;
+        right: 16px;
+    }
+
+    .splash-dialogue {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .dialogue-portrait {
+        width: 56px;
+        height: 56px;
+    }
+
+    .splash-resume {
+        margin-left: 0;
+    }
+
+    .splash-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
