@@ -582,13 +582,19 @@
             if (!splash) return;
 
             const SEEN = 'splashSeen';
+
+            // ?splash=1 shows the intro on every load and never records that
+            // it was seen, so it can be reviewed repeatedly without clearing
+            // session storage between looks.
+            const force = /[?&]splash=1(?:&|$)/.test(window.location.search);
+
             let seen = false;
             try { seen = sessionStorage.getItem(SEEN) === '1'; } catch (e) {}
 
             // Someone sent a link straight to a section: honour it.
             const deepLink = window.location.hash.length > 1;
 
-            if (seen || deepLink) {
+            if (!force && (seen || deepLink)) {
                 splash.remove();
                 return;
             }
@@ -596,7 +602,9 @@
             document.body.classList.add('splash-open');
 
             function dismiss() {
-                try { sessionStorage.setItem(SEEN, '1'); } catch (e) {}
+                if (!force) {
+                    try { sessionStorage.setItem(SEEN, '1'); } catch (e) {}
+                }
                 splash.classList.add('is-leaving');
                 document.body.classList.remove('splash-open');
                 const done = () => splash.remove();
