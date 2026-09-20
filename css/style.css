@@ -2195,3 +2195,218 @@ body::after {
         display: none !important;
     }
 }
+
+/* ==========================================================================
+   CURRENT QUEST — showcase reel for the in-development project
+   ========================================================================== */
+
+.quest-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    border-bottom: 3px solid var(--primary-ui-color);
+    margin-bottom: 26px;
+}
+
+.quest-header .section-title {
+    flex: 1 1 auto;
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.quest-badge {
+    flex: 0 0 auto;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: .55rem;
+    letter-spacing: 1px;
+    color: var(--game-bg-color);
+    background: var(--secondary-ui-color);
+    border-radius: 4px;
+}
+
+.quest-showcase {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.quest-stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #000;
+    border: 2px solid var(--primary-ui-color);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 0 18px rgba(0, 188, 212, .25);
+}
+
+.quest-video,
+.quest-still {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: #000;
+}
+
+/* `display: block` above outranks the UA rule that makes [hidden] work, so
+   the hidden element would stay on screen. Restore it at higher specificity. */
+.quest-video[hidden],
+.quest-still[hidden] {
+    display: none;
+}
+
+.quest-reel {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.quest-thumb {
+    position: relative;
+    padding: 0;
+    aspect-ratio: 16 / 10;
+    background: #000;
+    border: 2px solid rgba(76, 175, 80, .45);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    filter: grayscale(55%) brightness(.7);
+    transition: all var(--animation-speed) ease-out;
+}
+
+.quest-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.quest-thumb-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    color: #fff;
+    text-shadow: 0 0 6px #000;
+    pointer-events: none;
+}
+
+.quest-thumb:hover,
+.quest-thumb:focus-visible {
+    filter: grayscale(0) brightness(1);
+    border-color: var(--primary-ui-color);
+    transform: translateY(-2px);
+    outline: 0;
+}
+
+.quest-thumb.is-active {
+    filter: grayscale(0) brightness(1.05);
+    border-color: var(--secondary-ui-color);
+    box-shadow: 0 0 10px rgba(255, 202, 40, .5);
+}
+
+.quest-info {
+    background: rgba(0, 0, 0, .55);
+    border: 2px solid var(--primary-ui-color);
+    border-radius: 6px;
+    padding: 18px;
+}
+
+.quest-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: .95rem;
+    line-height: 1.5;
+    color: var(--secondary-ui-color);
+    margin: 0 0 10px;
+}
+
+.quest-role {
+    margin: 0 0 12px;
+    color: var(--primary-ui-color);
+    font-size: 1.05em;
+}
+
+.quest-pitch {
+    margin: 0 0 16px;
+    font-size: 1.05em;
+    line-height: 1.5;
+    opacity: .9;
+}
+
+.quest-specs {
+    margin: 0 0 18px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(76, 175, 80, .5);
+}
+
+.quest-specs > div {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.quest-specs dt {
+    font-family: 'Press Start 2P', cursive;
+    font-size: .48rem;
+    line-height: 1.7;
+    color: var(--primary-ui-color);
+}
+
+.quest-specs dd {
+    margin: 0;
+    font-size: 1.02em;
+}
+
+.quest-link {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: .6rem;
+    color: #000;
+    background: var(--primary-ui-color);
+    border-radius: 4px;
+    transition: all var(--animation-speed) ease-out;
+}
+
+.quest-link:hover,
+.quest-link:focus-visible {
+    background: var(--secondary-ui-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 188, 212, .4);
+    outline: 0;
+}
+
+@media (max-width: 900px) {
+    .quest-showcase {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .quest-header {
+        justify-content: center;
+    }
+
+    .quest-reel {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 6px;
+    }
+
+    .quest-specs > div {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+}
